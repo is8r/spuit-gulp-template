@@ -14,8 +14,8 @@ var minifycss = require('gulp-minify-css');
 
 var paths = {
   copyElements: [
-    'assets/**/*.html',
-    'assets/**/*.png'
+    'assets/views/**/*.html',
+    'assets/views/**/*.png'
     ],
   scripts: [
     'assets/javascripts/vender/**/*.js',
