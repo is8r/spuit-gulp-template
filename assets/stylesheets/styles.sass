@@ -1,0 +1,85 @@
+@import "vendor/spuit/addons/reset"
+@import "vendor/spuit/all"
+
+@import "styles/config/settings"
+@import "styles/config/base"
+@import "styles/config/layouts"
+
+@import "styles/modules/topbar"
+@import "styles/modules/sidebar"
+@import "styles/modules/footer"
+
+// WIP:
+
+.meta
+  +meta
+
+.sample-form
+  +form($color-accent)
+
+.sample-table
+  #{&}__frame
+    +table-frame
+  #{&}__line
+    +table-line
+  #{&}__stripe
+    +table-stripe
+  #{&}__stacktable
+    +table-line-stacktable
+
+.sample-body
+  +body
+
+.sample-sassmaps
+  .icon
+    $icon-images: (icon-ai: 0px, icon-fl: 10px, icon-fw: 0px, icon-id: 0px, icon-ps: 0px)
+    +sass-maps($icon-images)
+
+.sample-elements
+  > ul
+    > li
+      +inline-block
+      margin-right: 10px
+      margin-bottom: 10px
+  .button
+    +button-flat(14px, $color-accent)
+  .button-semiflat
+    +button-semiflat(14px, $color-accent)
+  .button-border
+    +button-border(14px, $color-accent)
+  .button-emboss
+    +button-emboss(14px, $color-accent)
+  .button-icon
+    +button-icon('\f113', 40px, 20px, $color-accent)
+  .icon-disc
+    +icon-disc('\f113', 40px, 20px, $color-accent)
+  .icon-semiflat
+    +icon-semiflat('\f113', 40px, 20px, $color-accent)
+  .icon-border
+    +icon-border('\f113', 40px, 20px, $color-accent)
+
+.pulldown
+  +pulldown
+  .pulldown__content
+    a
+      +font-en(12px)
+      text-transform: uppercase
+      color: #000
+
+.sample-chat
+  .chat
+    +chat
+
+.sample-split
+  ul
+    > li
+      padding: 10px
+      height: 100px
+  ul.split5
+    +split(5, 1)
+  ul.split4
+    +split(4, 1)
+  ul.split3
+    +split(5, 1)
+
+

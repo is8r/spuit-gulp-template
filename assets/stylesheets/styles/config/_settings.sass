@@ -1,0 +1,33 @@
+// site property
+$color-def: #222
+$color-black: #111
+$color-gray: #ddd
+$color-accent: #f6615b
+
+$border-color: #dedede
+$border-line: solid 1px $border-color
+
+$contents-width: 960px
+$break-point: 640px
+
+// imports
++import-opensans
++import-montserrat
++import-fa
++margin-set
++selection(#111, #fdfdc1)
+
+// font
+=font($size: 1em, $line-height: normal, $weight: normal, $family: 'sans')
+  font-family: 'Open Sans', $sans
+  font-size: $size
+  font-weight: $weight
+  line-height: $line-height
+
+=font-en($size: 1em, $line-height: normal, $weight: normal, $family: 'sans')
+  font-family: 'Montserrat', $sans
+  font-size: $size
+  font-weight: $weight
+  line-height: $line-height
+
+

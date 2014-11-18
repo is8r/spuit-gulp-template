@@ -1,0 +1,28 @@
+$color: transparent
+// $color: #0183b7
+$color-debug: rgba($color, 0.0)
+
+.l-container
+  +wrap($contents-width)
+  +clearfix
+  position: relative
+  padding-top: 100px
+  background: adjust-hue($color-debug, 80deg)
+  +break-points('mobile')
+    padding-top: 20px
+
+.content
+  background: adjust-hue($color-debug, 80deg)
+  width: 720px
+  float: left
+  +break-points('mobile')
+    width: auto
+    float: none
+
+.sidebar
+  background: adjust-hue($color-debug, 100deg)
+  width: 200px
+  float: right
+  +break-points('mobile')
+    width: auto
+    float: none

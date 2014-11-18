@@ -1,0 +1,100 @@
+<!-- .form -->
+<section>
+  <h3 class="meta">vendor/spuit/modules/_form</h3>
+  <hr />
+  <form action="#" class="sample-form">
+
+    <header class="sample-form__description">
+      <p>説明とかが入ります。説明とかが入ります。説明とかが入ります。説明とかが入ります。説明とかが入ります。説明とかが入ります。説明とかが入ります。説明とかが入ります。説明とかが入ります。説明とかが入ります。説明とかが入ります。説明とかが入ります。説明とかが入ります。説明とかが入ります。説明とかが入ります。</p>
+    </header>
+
+    <div class="sample-form__field">
+      <label>お名前</label>
+      <input id="field-text" type="text" value="" size="8" />
+    </div>
+
+    <div class="sample-form__field">
+      <label>
+        メール
+      </label>
+      <input id="field-email" type="email" spellcheck="false" value="" maxlength="255" />
+    </div>
+
+    <div class="sample-form__field">
+      <label>
+        お問い合わせ内容
+      </label>
+
+      <textarea id="field-textarea" spellcheck="true" rows="10" cols="50" placeholder="お問い合わせ内容を入力下さい"></textarea>
+    </div>
+
+    <fieldset class="sample-form__field">
+      <legend>
+        ラジオボタン
+      </legend>
+
+      <ul class="sample-form__list">
+        <li>
+          <input id="field-radio-0" name="field-radio" type="radio" value="First Choice" checked="checked" />
+          <label for="field-radio-0">First Choice</label>
+        </li>
+        <li>
+          <input id="field-radio-1" name="field-radio" type="radio" value="Second Choice" />
+          <label for="field-radio-1">Second Choice</label>
+        </li>
+        <li>
+          <input id="field-radio-2" name="field-radio" type="radio" value="Third Choice" />
+          <label for="field-radio-2">Third Choice</label>
+        </li>
+      </ul>
+    </fieldset>
+
+    <fieldset class="sample-form__field">
+      <legend>
+        チェックボックス
+      </legend>
+
+      <ul class="sample-form__list">
+        <li>
+          <input id="field-checkbox-0" name="field-checkbox" type="checkbox" value="First Choice" />
+          <label for="field-checkbox-0">First Choice</label>
+        </li>
+        <li>
+          <input id="field-checkbox-1" name="field-checkbox" type="checkbox" value="Second Choice" />
+          <label for="field-checkbox-1">Second Choice</label>
+        </li>
+        <li>
+          <input id="field-checkbox-2" name="field-checkbox" type="checkbox" value="Third Choice" />
+          <label for="field-checkbox-2">Third Choice</label>
+        </li>
+      </ul>
+    </fieldset>
+
+    <div class="sample-form__field">
+      <legend>
+        セレクトメニュー
+      </legend>
+      <select id="field-select">
+        <option value="First Choice">First Choice</option>
+        <option value="Second Choice">Second Choice</option>
+        <option value="Third Choice">Third Choice</option>
+      </select>
+    </div>
+
+    <div class="sample-form__field">
+      <label>
+        ファイル
+      </label>
+      <input type="file" id="field-file" multiple />
+    </div>
+
+    <input id="field-hidden" type="hidden" value="" />
+
+    <div class="sample-form__field">
+      <input type="reset" value="Reset" class="button" />
+      <input type="submit" value="Submit" class="button" />
+    </div>
+
+  </form>
+</section>
+<!-- /.form -->
