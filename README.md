@@ -50,6 +50,9 @@ Spuitをgulp単体やRails+gulpで動かす際に使うテンプレート
 	
 4.	hamlにインクルード
 
+	```
     = stylesheet_link_tag '/stylesheets/styles.css'
     = javascript_include_tag 'application', '/javascripts/scripts.min.js', 'data-turbolinks-track' => true
+	```
+
 
