@@ -25,20 +25,35 @@ Spuitをgulp単体やRails+gulpで動かす際に使うテンプレート
 
 
 ## Railsで使う場合
-
-1.  railsプロジェクト内にgulpフォルダを作って移動
 	
-	```
-	$ cd /rails-project/gulp
-	```
-	
-2.  このリポジトリをクローン
+1.  このリポジトリをクローン
 
 	```
 	$ git clone git@github.com:is8r/spuit-gulp-template.git
 	```
+
+2.  ディレクトリ名を任意のものに変更、移動
 	
-3.	gulpタスクを実行
+	```
+	$ mv spuit-gulp-template gulp
+	$ cd gulp
+	```
+	
+3.	npm install
+
+	```
+	$ npm install
+	```
+
+4.	ディレクトリの移動とSpuit本体のGit Submoduleのクローン
+
+	```
+	$ cd assets/stylesheets/vendor
+	$ g clone git@github.com:is8r/spuit.git
+	$ cd ../../../
+	```
+
+4.	gulpタスクを実行
 	
 	
 	```
@@ -48,7 +63,7 @@ Spuitをgulp単体やRails+gulpで動かす際に使うテンプレート
 	/gulp/assets 以下のファイルを変更したら
 	/public/images,	/public/javascripts,	/public/stylesheets	が書出される。
 	
-4.	hamlにインクルード
+5.	hamlにインクルード
 
 	```
     = stylesheet_link_tag '/stylesheets/styles.css'
