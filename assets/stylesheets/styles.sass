@@ -9,7 +9,6 @@
 @import "styles/modules/sidebar"
 @import "styles/modules/footer"
 
-
 // WIP:
 
 .meta
@@ -17,6 +16,12 @@
 
 .sample-form
   +form($color-accent)
+  .custom-select
+    +select
+  .custom-radio
+    +radio-fa
+  .custom-checkbox
+    +checkbox-fa
 
 .sample-table
   #{&}__frame

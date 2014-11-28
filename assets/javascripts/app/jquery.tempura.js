@@ -7,14 +7,14 @@
  *  License:
  *  Howto:
 
-  $('.js-tmplore-output').tmplore({
-    $navigation: $('.js-tmplore-navigation'),
+  $('.js-tempura-output').tempura({
+    $navigation: $('.js-tempura-navigation'),
     ready: 'template/_top.html'
   });
 */
 
 ;(function(jQuery) {
-    var pluginName = 'tmplore';
+    var pluginName = 'tempura';
     $[pluginName] = function(element, options) {
 
         //----------------------------------------------------------------------
@@ -65,6 +65,8 @@
         },
 
         plugin.loadTmpl = function(path, data) {
+          if(!path) return;
+
           if(op.ready && op.ready == path) {
             location.hash = '';
           } else {

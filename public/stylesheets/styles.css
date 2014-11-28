@@ -1060,6 +1060,192 @@ hr {
 
     textarea {
       height: 100px; } }
+  .sample-form .custom-select {
+    -webkit-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #eee;
+    width: 300px; }
+    .sample-form .custom-select select {
+      -webkit-appearance: none;
+      -ms-appearance: none;
+      -moz-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      background-size: 100%;
+      background-image: -webkit-linear-gradient(transparent, transparent);
+      background-image: linear-gradient(transparent, transparent);
+      background-image: -moz-linear-gradient(transparent, transparent);
+      background-image: linear-gradient(transparent, transparent);
+      background-image: linear-gradient(transparent, transparent);
+      background-image: linear-gradient(transparent, transparent);
+      -webkit-border-radius: 0;
+      -ms-border-radius: 0;
+      -moz-border-radius: 0;
+      -o-border-radius: 0;
+      border-radius: 0;
+      border: none;
+      outline: none;
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      display: -moz-inline-box;
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      width: 100%;
+      padding: 12px 12px 12px 12px;
+      cursor: pointer;
+      color: #000; }
+      .sample-form .custom-select select:focus {
+        outline: none; }
+      .sample-form .custom-select select:focus {
+        outline: none;
+        border: none; }
+    .sample-form .custom-select:before {
+      display: -moz-inline-box;
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      text-indent: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "";
+      position: absolute;
+      top: 6px;
+      right: 12px; }
+    .sample-form .custom-select:after {
+      display: -moz-inline-box;
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      text-indent: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "";
+      position: absolute;
+      top: 15px;
+      right: 12px; }
+    .sample-form .custom-select select {
+      width: 110%; }
+      .sample-form .custom-select select::-ms-expand {
+        display: none; }
+  .sample-form .custom-radio label {
+    display: -moz-inline-box;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    position: relative;
+    cursor: pointer;
+    padding-left: 30px; }
+    .sample-form .custom-radio label:before {
+      display: -moz-inline-box;
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      text-indent: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "";
+      display: -moz-inline-box;
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      border-radius: 100%;
+      font-size: 20px;
+      color: #eee; }
+  .sample-form .custom-radio input[type="radio"] {
+    display: none; }
+    .sample-form .custom-radio input[type="radio"]:checked + label:before {
+      display: -moz-inline-box;
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      text-indent: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "";
+      color: #000; }
+  .sample-form .custom-checkbox label {
+    display: -moz-inline-box;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    position: relative;
+    cursor: pointer;
+    padding-left: 30px; }
+    .sample-form .custom-checkbox label:before {
+      display: -moz-inline-box;
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      text-indent: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "";
+      display: -moz-inline-box;
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      border-radius: 100%;
+      font-size: 18px;
+      color: #eee; }
+  .sample-form .custom-checkbox input[type="checkbox"] {
+    display: none; }
+    .sample-form .custom-checkbox input[type="checkbox"]:checked + label:before {
+      display: -moz-inline-box;
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      text-indent: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "";
+      color: #000; }
 
 .sample-table .sample-table__frame {
   border-top: 1px solid #eee; }
@@ -2598,11 +2784,11 @@ hr {
   height: 100px;
   background: #f6615b; }
 .sample-figure .sample-circle {
-  -webkit-border-radius: 100px;
-  -ms-border-radius: 100px;
-  -moz-border-radius: 100px;
-  -o-border-radius: 100px;
-  border-radius: 100px;
+  -webkit-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
   width: 100px;
   height: 100px;
   background: #f6615b; }

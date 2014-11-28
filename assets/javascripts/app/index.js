@@ -1,9 +1,9 @@
 $(function() {
   // console.log('log');
 
-  // tmplore
-  $('.js-tmplore-output').tmplore({
-    $navigation: $('.js-tmplore-navigation'),
+  // tempura
+  $('.js-tempura-output').tempura({
+    $navigation: $('.js-tempura-navigation'),
     ready: 'template/_top.html'
   });
 
