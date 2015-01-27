@@ -69,6 +69,20 @@ var Spuit = {
     return min + Math.random()*(max-min);
   },
 
+  //  ランダムな文字列を返す
+  //  var n = Spuit.randomStrings(8);
+  randomStrings : function(length){
+    var r = "";
+    for(var i=0; i<length; i++){
+      r += Spuit.randomString();
+    }
+    return r;
+  },
+  randomString : function(){
+    var STRING_SET = "abcdefghijklmnopqrstuvwxyz0123456789";
+    return STRING_SET[Math.floor(Math.random()*STRING_SET.length)];
+  },
+
   //  ランダムな整数を返す
   //  var n = Spuit.randomInt(n);
   randomInt : function(n){

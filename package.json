@@ -17,5 +17,9 @@
   },
   "dependencies": {
     "del": "^0.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/is8r/spuit.git"
   }
 }
