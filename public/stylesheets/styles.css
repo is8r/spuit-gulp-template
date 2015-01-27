@@ -1221,28 +1221,10 @@ hr {
       text-indent: 0;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      content: "";
+      content: "";
       position: absolute;
       left: auto;
       right: 6px;
-      top: 12px;
-      bottom: auto; }
-    .sample-form .custom-select:after {
-      display: -moz-inline-box;
-      display: inline-block;
-      *display: inline;
-      *zoom: 1;
-      font-family: FontAwesome;
-      font-style: normal;
-      font-weight: normal;
-      line-height: 1;
-      text-indent: 0;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      content: "";
-      position: absolute;
-      left: auto;
-      right: 15px;
       top: 12px;
       bottom: auto; }
     .sample-form .custom-select select {
