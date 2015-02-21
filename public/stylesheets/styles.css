@@ -1009,6 +1009,178 @@ hr {
     font-weight: normal;
     line-height: normal; }
 
+.tip {
+  display: -moz-inline-box;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  position: relative; }
+
+.tip-inner {
+  -webkit-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  font-size: 10px;
+  font-weight: normal;
+  line-height: normal;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 6px 10px;
+  white-space: nowrap;
+  cursor: default; }
+  .tip-inner.is-top {
+    -webkit-transform: translateX(-50%) translateY(-100%);
+    -ms-transform: translateX(-50%) translateY(-100%);
+    -moz-transform: translateX(-50%) translateY(-100%);
+    -o-transform: translateX(-50%) translateY(-100%);
+    transform: translateX(-50%) translateY(-100%);
+    position: relative;
+    position: absolute;
+    left: 50%;
+    top: -10px; }
+    .tip-inner.is-top:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 5px solid transparent;
+      border-top-color: rgba(0, 0, 0, 0.2); }
+    .tip-inner.is-top:after {
+      -webkit-transform: translateX(-5px) translateY(10px) rotate(0);
+      -ms-transform: translateX(-5px) translateY(10px) rotate(0);
+      -moz-transform: translateX(-5px) translateY(10px) rotate(0);
+      -o-transform: translateX(-5px) translateY(10px) rotate(0);
+      transform: translateX(-5px) translateY(10px) rotate(0);
+      right: auto;
+      left: 50%;
+      bottom: 0; }
+  .tip-inner.is-bottom {
+    -webkit-transform: translateX(-50%) translateY(100%);
+    -ms-transform: translateX(-50%) translateY(100%);
+    -moz-transform: translateX(-50%) translateY(100%);
+    -o-transform: translateX(-50%) translateY(100%);
+    transform: translateX(-50%) translateY(100%);
+    position: relative;
+    position: absolute;
+    left: 50%;
+    bottom: -10px; }
+    .tip-inner.is-bottom:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 5px solid transparent;
+      border-top-color: rgba(0, 0, 0, 0.2); }
+    .tip-inner.is-bottom:after {
+      -webkit-transform: translateX(-5px) translateY(-10px) rotate(180deg);
+      -ms-transform: translateX(-5px) translateY(-10px) rotate(180deg);
+      -moz-transform: translateX(-5px) translateY(-10px) rotate(180deg);
+      -o-transform: translateX(-5px) translateY(-10px) rotate(180deg);
+      transform: translateX(-5px) translateY(-10px) rotate(180deg);
+      right: auto;
+      left: 50%;
+      top: 0; }
+  .tip-inner.is-left {
+    -webkit-transform: translateX(-100%) translateY(-50%);
+    -ms-transform: translateX(-100%) translateY(-50%);
+    -moz-transform: translateX(-100%) translateY(-50%);
+    -o-transform: translateX(-100%) translateY(-50%);
+    transform: translateX(-100%) translateY(-50%);
+    position: relative;
+    position: absolute;
+    left: -10px;
+    top: 50%; }
+    .tip-inner.is-left:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 5px solid transparent;
+      border-top-color: rgba(0, 0, 0, 0.2); }
+    .tip-inner.is-left:after {
+      -webkit-transform: translateX(10px) translateY(-5px) rotate(-90deg);
+      -ms-transform: translateX(10px) translateY(-5px) rotate(-90deg);
+      -moz-transform: translateX(10px) translateY(-5px) rotate(-90deg);
+      -o-transform: translateX(10px) translateY(-5px) rotate(-90deg);
+      transform: translateX(10px) translateY(-5px) rotate(-90deg);
+      left: auto;
+      right: 0;
+      top: 50%; }
+  .tip-inner.is-right {
+    -webkit-transform: translateX(100%) translateY(-50%);
+    -ms-transform: translateX(100%) translateY(-50%);
+    -moz-transform: translateX(100%) translateY(-50%);
+    -o-transform: translateX(100%) translateY(-50%);
+    transform: translateX(100%) translateY(-50%);
+    position: relative;
+    position: absolute;
+    right: -10px;
+    top: 50%; }
+    .tip-inner.is-right:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 5px solid transparent;
+      border-top-color: rgba(0, 0, 0, 0.2); }
+    .tip-inner.is-right:after {
+      -webkit-transform: translateX(-10px) translateY(-5px) rotate(90deg);
+      -ms-transform: translateX(-10px) translateY(-5px) rotate(90deg);
+      -moz-transform: translateX(-10px) translateY(-5px) rotate(90deg);
+      -o-transform: translateX(-10px) translateY(-5px) rotate(90deg);
+      transform: translateX(-10px) translateY(-5px) rotate(90deg);
+      left: 0;
+      right: auto;
+      top: 50%; }
+
+.notification {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  z-index: 9999;
+  max-width: 300px; }
+  .notification__item {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: normal;
+    padding: 10px;
+    margin-top: 10px;
+    color: #31708f;
+    background: #d9edf7;
+    border: 1px solid #c4e3f3; }
+    .notification__item:first-child {
+      margin-top: 0; }
+    .notification__item.is-success {
+      color: #3c763d;
+      background: #dff0d8;
+      border: 1px solid #d0e9c6; }
+    .notification__item.is-warning {
+      color: #8a6d3b;
+      background: #fcf8e3;
+      border: 1px solid #faf2cc; }
+    .notification__item.is-danger {
+      color: #a94442;
+      background: #f2dede;
+      border: 1px solid #ebcccc; }
+
 .meta {
   font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   font-size: 10px;

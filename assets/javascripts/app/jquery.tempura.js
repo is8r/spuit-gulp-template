@@ -23,7 +23,8 @@
             pluginName: pluginName,
             $output: null,
             $navigation: null,
-            ready: null
+            ready: null,
+            callback: null
         }
         var plugin = this;
         plugin.settings = {}
@@ -84,6 +85,10 @@
             op.$output.removeClass('is-loading');
             op.$output.empty();
             op.$output.append(html);
+
+            if (op.callback) {
+              op.callback.apply();
+            }
           }).error(function(e) {
             plugin.loadTmpl(op.ready);
           });

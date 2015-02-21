@@ -57,18 +57,6 @@ var Spuit = {
 
   //----------------------------------------------------------------------
 
-  //  ランダムな数を返す
-  //  var n = Spuit.random(n);
-  random : function(n){
-    return Math.random()*n;
-  },
-
-  //  ランダムな数を返す
-  //  var n = Spuit.randomRange(1, 2);
-  randomRange : function(min, max){
-    return min + Math.random()*(max-min);
-  },
-
   //  ランダムな文字列を返す
   //  var n = Spuit.randomStrings(8);
   randomStrings : function(length){
@@ -81,6 +69,18 @@ var Spuit = {
   randomString : function(){
     var STRING_SET = "abcdefghijklmnopqrstuvwxyz0123456789";
     return STRING_SET[Math.floor(Math.random()*STRING_SET.length)];
+  },
+
+  //  ランダムな数を返す
+  //  var n = Spuit.random(n);
+  random : function(n){
+    return Math.random()*n;
+  },
+
+  //  ランダムな数を返す
+  //  var n = Spuit.randomRange(1, 2);
+  randomRange : function(min, max){
+    return min + Math.random()*(max-min);
   },
 
   //  ランダムな整数を返す
@@ -100,6 +100,20 @@ var Spuit = {
   randomSign : function(n){
     return (Math.random() < .5) ? -1 : 1;
   },
+
+  //  ランダムな色を取得
+  //  var r = Static.randomColor();
+  randomColor : function()
+  {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+      color += letters[Math.round(Math.random() * 15)];
+    }
+    return color;
+  },
+
+  //----------------------------------------------------------------------
 
   //  2点間の距離を測定
   //  var distance = Spuit.getDistance(o1,o2);
@@ -244,17 +258,7 @@ var Spuit = {
     return ret;
   },
 
-  //  ランダムな色を取得
-  //  var r = Static.randomColor();
-  randomColor : function()
-  {
-    var letters = '0123456789ABCDEF'.split('');
-    var color = '#';
-    for (var i = 0; i < 6; i++ ) {
-      color += letters[Math.round(Math.random() * 15)];
-    }
-    return color;
-  },
+  //----------------------------------------------------------------------
 
   //  iPhone,iPad判別
   //  var bo = Spuit.isiOS();

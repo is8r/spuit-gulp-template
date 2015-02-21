@@ -30,11 +30,11 @@ $(function() {
     var options;
 
     plugin.init = function() {
-        options = plugin.settings = $.extend({}, defaults, options);
+      options = plugin.settings = $.extend({}, defaults, options);
 
-        //
-        plugin.public_function();
-        private_function();
+      //
+      plugin.public_function();
+      private_function();
     }
 
     //----------------------------------------------------------------------

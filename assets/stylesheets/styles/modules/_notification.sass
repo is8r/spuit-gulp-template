@@ -1,0 +1,43 @@
+.notification
+  +border-box
+  position: fixed
+  top: 0
+  right: 0
+  padding: 10px
+  z-index: 9999
+  max-width: 300px
+
+  @at-root
+    #{&}__item
+      +border-box
+      +border-radius(4px)
+      +font(12px)
+      padding: 10px
+      margin-top: 10px
+      &:first-child
+        margin-top: 0
+
+      $c: #31708f
+      $c-bg: #d9edf7
+      color: $c
+      background: $c-bg
+      border: 1px solid darken($c-bg, 5%)
+      &.is-success
+        $c: #3c763d
+        $c-bg: #dff0d8
+        color: $c
+        background: $c-bg
+        border: 1px solid darken($c-bg, 5%)
+      &.is-warning
+        $c: #8a6d3b
+        $c-bg: #fcf8e3
+        color: $c
+        background: $c-bg
+        border: 1px solid darken($c-bg, 5%)
+      &.is-danger
+        $c: #a94442
+        $c-bg: #f2dede
+        color: $c
+        background: $c-bg
+        border: 1px solid darken($c-bg, 5%)
+
