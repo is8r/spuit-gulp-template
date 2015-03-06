@@ -42,7 +42,6 @@ $(function () {
     _.templateSettings = {interpolate: /\{\{(.+?)\}\}/g};
     settings.template = _.template('<li class="notification__item {{ data.add_class }}">{{ data.message }}</li>');
 
-    var $inner;
     var $container;
     self.on('notification:init', function(e) {
       $container = $(this).find('> ul');
@@ -50,7 +49,25 @@ $(function () {
 
     self.on('notification:push', function(e, data) {
       var item = settings.template({data: data});
-      $(item).hide().appendTo($container).fadeIn().delay(3000).fadeOut();
+      $container.append(item);
+      self.trigger('notification:init_items');
+    });
+
+    self.on('notification:init_items', function(e) {
+      $.each(self.find('> ul > li'), function(i, item) {
+        var $item = $(item);
+        if (!$item.attr('isReady')) {
+          $item.attr('isReady', true);
+          $item.hide().fadeIn().delay(3000).fadeOut();
+          $item.on('click', function(e) {
+            self.trigger('notification:click', this);
+          });
+        }
+      });
+    });
+
+    self.on('notification:click', function(e, item) {
+      $(item).stop().fadeOut();
     });
 
     self.trigger('notification:init');

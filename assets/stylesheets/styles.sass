@@ -25,16 +25,6 @@
   .custom-checkbox
     +checkbox-fa
 
-.sample-table
-  #{&}__frame
-    +table-frame
-  #{&}__line
-    +table-line
-  #{&}__stripe
-    +table-stripe
-  #{&}__stacktable
-    +table-line-stacktable
-
 .sample-body
   +body
 
@@ -74,21 +64,36 @@
       text-transform: uppercase
       color: #000
 
+
+.sample-table
+  #{&}--frame
+    +table-frame
+  #{&}--line
+    +table-line
+  #{&}--stripe
+    +table-stripe
+  #{&}--stacktable
+    +table-line-stacktable
+
 .sample-chat
   .chat
     +chat
 
-.sample-split
+.sample-cards
   ul
     > li
       padding: 10px
       height: 100px
-  ul.split5
-    +split(5, 1)
-  ul.split4
-    +split(4, 1)
-  ul.split3
-    +split(5, 1)
+  .cards5
+    +cards(5, 1)
+  .cards4
+    +cards(4, 1)
+  .cards3
+    +cards(3, 1)
+
+.sample-grids
+  .grids
+    +grids
 
 .sample-h
   .h-border-horizon
@@ -123,6 +128,3 @@
     +button-border(14px, #000, 8px 20px 6px 20px, 2px, 0px)
     margin-top: 40px
     width: 200px
-
-//=button-border($size: 14px, $c: #ffa500, $p: 10px 20px, $border: 2px, $r: 0px)
-
