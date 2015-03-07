@@ -1,37 +1,33 @@
 .topbar
   $boder: 1px solid #eee
-  +wrap($contents-width, $break-point, true)
-  position: fixed
-  top: 0
-  left: 0
-  width: 100%
-  height: 70px
+
+  +clearfix
   z-index: 999
   background: #fff
   border-bottom: $boder
-  +break-points('mobile')
-    position: relative
+  height: 70px
+  +media('mobile')
     height: auto
+
   @at-root
     #{&}__title
       +font-en(30px)
-      position: absolute
-      top: 6px
-      left: 0px
-      padding: 10px 10px 10px 0
+      float: left
+      padding: 16px 10px 10px 0
       > span
         +font-en(12px)
         text-transform: none
-      +break-points('mobile')
+      +media('mobile')
         +font-en(12px)
+        float: none
         position: relative
-        padding: 10px 10px 24px 10px
+        padding: 20px 10px 22px 10px
         > span
           +font-en(10px)
+
     #{&}__lists
-      position: absolute
-      top: 15px
-      right: 0px
+      float: right
+      margin-top: 15px
       > li
         +inline-block
         > a
@@ -41,15 +37,17 @@
           padding: 14px 10px
           color: #000
           text-decoration: none
-      +break-points('mobile')
+      +media('mobile')
         position: relative
-        top: 0
+        float: none
+        margin-top: 0
         > li
           display: block
           border-top: $boder
           > a
             +font-en(12px)
             padding: 8px 10px
+
     #{&}__trigger-icon
       +icon-disc('\f0c9', 30px, 10px, $color-accent)
       position: absolute
@@ -61,6 +59,7 @@
       &.is-open
         &:before
           +rotate(90deg)
-      +break-points('mobile')
-        top: 10px
+      +media('mobile')
+        top: 12px
+        right: 10px
 
