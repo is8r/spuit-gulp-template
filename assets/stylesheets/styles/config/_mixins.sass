@@ -11,4 +11,183 @@
   font-weight: $weight
   line-height: $line-height
 
+=button($c: $color-blue, $c-text: #fff)
+  +button-emboss(14px, $c, $c-text, 6px 20px, 6px, 2px)
+  &.is-loading
+    +fa-loading
+    +opacity(0.6)
+    pointer-events: none
+    cursor: default
 
+// =link($size: 14px)
+//   +font($size)
+//   color: $color-blue
+//   text-decoration: none
+//   padding-bottom: 2px
+//   border-bottom: 1px solid $color-blue
+//   &:hover
+//     border-color: transparent
+
+// =link-icon($src: 'xxx', $w: 20px, $h: 20px)
+//   +inline-block
+//   position: relative
+//   &:before
+//     +inline-block
+//     position: absolute
+//     top: 0
+//     left: 0
+//     content: ' '
+//     background-image: image-url('#{$src}.png')
+//     background-position: center center
+//     background-repeat: no-repeat
+//     background-size: cover
+//     width: $w
+//     height: $h
+//     +break-points('retina')
+//       background-image: image-url('#{$src}@2x.png')
+
+// =checkbox
+//   $size: 14px
+//   label
+//     +inline-block
+//     +font(12px)
+//     color: $color-black
+//     position: relative
+//     cursor: pointer
+//     padding-left: 16px
+//     &:before
+//       +fa('\f096')
+//       +inline-block
+//       font-size: $size
+//       color: $color-gray
+//       position: absolute
+//       top: 3px
+//       left: 0
+//       width: $size
+//       height: $size
+//   input[type="checkbox"]
+//     display: none
+//     &:checked + label
+//       &:before
+//         +fa('\f14a')
+//         font-size: $size
+//         color: $color-blue
+
+// =radio($font-size: 12px, $icon-size: 14px, $pl: 16px)
+//   label
+//     +inline-block
+//     +font($font-size)
+//     color: $color-black
+//     position: relative
+//     cursor: pointer
+//     padding-left: $pl
+//     &:before
+//       $r: $icon-size
+//       +fa('\f10c')
+//       +inline-block
+//       position: absolute
+//       top: 3px
+//       left: 0
+//       width: $r
+//       height: $r
+//       border-radius: 100%
+//       font-size: $icon-size
+//       color: $color-gray
+//   input[type="radio"]
+//     display: none
+//     &:checked + label
+//       &:before
+//         +fa('\f192')
+//         color: $color-blue
+
+// =img-icon($src: 'xxx', $w: 10px, $h: 10px)
+//   &:before
+//     +inline-block
+//     content: ' '
+//     background-image: image-url('#{$src}.png')
+//     background-position: center center
+//     background-repeat: no-repeat
+//     background-size: cover
+//     width: $w
+//     height: $h
+//     +break-points('retina')
+//       background-image: image-url('#{$src}@2x.png')
+
+// =img-bg($src: 'xxx', $w: 10px, $h: 10px)
+//   background-image: image-url('#{$src}.png')
+//   background-position: center center
+//   background-repeat: no-repeat
+//   background-size: cover
+//   width: $w
+//   height: $h
+//   +break-points('retina')
+//     background-image: image-url('#{$src}@2x.png')
+
+// =list($p: 14px, $b: 1px solid #eee)
+//   border-bottom: $b
+//   > li
+//     border-top: $b
+//     padding-top: $p
+//     padding-bottom: $p
+
+// =dl($wl: 160px, $wr: 520px, $p: 10px, $size: 13px, $b: 1px solid #eee, $floatbreak: true)
+//   $mg: 10px
+//   @extend %_dl
+//   position: relative
+//   *zoom: 1
+//   +clearfix
+//   width: 100%
+//   > dt
+//     +border-box
+//     clear: both
+//     float: left
+//     width: $wl
+//     border-top: $b
+//     display: block
+//     padding: $p $mg $p 0
+//     &:first-child
+//       border: none
+//   > dd
+//     position: relative
+//     float: left
+//     border-top: $b
+//     width: $wr
+//     display: block
+//     padding: $p 0 $p 0
+//     &:nth-child(2)
+//       border: none
+//   > dt
+//     +font($size)
+//     color: $color-black
+//     word-break: break-all
+//   > dd
+//     +font($size)
+//     color: $color-def
+//     word-break: break-all
+//   @if $floatbreak == true
+//     +break-points('mobile')
+//       width: auto
+//       > dt
+//         float: none
+//         width: auto
+//         padding-bottom: 0
+//       > dd
+//         border-top: none
+//         padding-left: 0
+//         padding-top: 5px
+//         display: block
+//         width: 100%
+
+// =image-fit-wrap
+//   position: relative
+//   overflow: hidden
+//   background: $color-gray-light
+//   img
+//     +image-fit
+
+// =image-fit
+//   @include translateY(-50%)
+//   width: 100%
+//   height: auto
+//   position: absolute
+//   top: 50%
