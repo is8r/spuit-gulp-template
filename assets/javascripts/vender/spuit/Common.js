@@ -1,9 +1,9 @@
-// Spuit
+// Common
 
-var Spuit = {
+var Common = {
 
   //  URLパラメータを受け取り
-  //  var xml = Spuit.getUrlVars();
+  //  var xml = Common.getUrlVars();
   //  alert(xml["xml"]);
   getUrlVars : function(){
     var vars = [], hash;
@@ -17,7 +17,7 @@ var Spuit = {
   },
 
   //  StringやjsonpデータをXMLに変換
-  //  var xmlObject = Spuit.string2xml(xml);
+  //  var xmlObject = Common.string2xml(xml);
   //  alert(xmlObject);
   string2xml : function(xmlData){
     if (window.ActiveXObject) {
@@ -36,11 +36,11 @@ var Spuit = {
 
   //オブジェクトの中身を確認
   showObject : function(elm,type){
-    var str = '「' + typeof elm + "」の中身";
+    var str = '[' + typeof elm + "]";
     var cnt = 0;
     for(i in elm){
       if(type == 'html'){
-        str += '<br />?n' + "[" + cnt + "] " + i.bold() + ' = ' + elm[i];
+        str += '<br />' + i.bold() + ' = ' + elm[i];
       } else {
         str += '?n' + "[" + cnt + "] " + i + ' = ' + elm[i];
       }
@@ -58,11 +58,11 @@ var Spuit = {
   //----------------------------------------------------------------------
 
   //  ランダムな文字列を返す
-  //  var n = Spuit.randomStrings(8);
+  //  var n = Common.randomStrings(8);
   randomStrings : function(length){
     var r = "";
     for(var i=0; i<length; i++){
-      r += Spuit.randomString();
+      r += Common.randomString();
     }
     return r;
   },
@@ -72,37 +72,37 @@ var Spuit = {
   },
 
   //  ランダムな数を返す
-  //  var n = Spuit.random(n);
+  //  var n = Common.random(n);
   random : function(n){
     return Math.random()*n;
   },
 
   //  ランダムな数を返す
-  //  var n = Spuit.randomRange(1, 2);
+  //  var n = Common.randomRange(1, 2);
   randomRange : function(min, max){
     return min + Math.random()*(max-min);
   },
 
   //  ランダムな整数を返す
-  //  var n = Spuit.randomInt(n);
+  //  var n = Common.randomInt(n);
   randomInt : function(n){
     return Math.floor(Math.random()*n);
   },
 
   //  0か1をランダムで返す
-  //  var n = Spuit.randomBit();
+  //  var n = Common.randomBit();
   randomBit : function(n){
     return (Math.random() < .5) ? 1 : 0;
   },
 
   //  -1か1をランダムで返す
-  //  var n = Spuit.randomSign();
+  //  var n = Common.randomSign();
   randomSign : function(n){
     return (Math.random() < .5) ? -1 : 1;
   },
 
   //  ランダムな色を取得
-  //  var r = Static.randomColor();
+  //  var r = Common.randomColor();
   randomColor : function()
   {
     var letters = '0123456789ABCDEF'.split('');
@@ -116,7 +116,7 @@ var Spuit = {
   //----------------------------------------------------------------------
 
   //  2点間の距離を測定
-  //  var distance = Spuit.getDistance(o1,o2);
+  //  var distance = Common.getDistance(o1,o2);
   getDistance : function(o1,o2){
     var d,dx,dy;
     dx = o1.x - o2.x;
@@ -126,8 +126,8 @@ var Spuit = {
   },
 
   //  2点間の角度を測定
-  //  var r = Spuit.getDegrees(o1,o2);
-  //  var r = Spuit.getRadians(o1,o2);
+  //  var r = Common.getDegrees(o1,o2);
+  //  var r = Common.getRadians(o1,o2);
   getDegrees : function(o1,o2){
     return (Math.atan2(o2.y-o1.y, o2.x-o1.x)) * 180/Math.PI;
   },
@@ -136,10 +136,10 @@ var Spuit = {
   },
 
   //  2点の中心点を取得
-  //  var center = Spuit.getCenter(o1,o2);
+  //  var center = Common.getCenter(o1,o2);
   getCenter : function(o1,o2){
-    var distance = Static.getDistance(o1,o2);
-    var rot = Static.getDegrees(o1,o2);
+    var distance = Common.getDistance(o1,o2);
+    var rot = Common.getDegrees(o1,o2);
     var dx = Math.cos(rot * Math.PI / 180) * (distance/2);
     var dy = Math.sin(rot * Math.PI / 180) * (distance/2);
     var x = o1.x+dx;
@@ -148,26 +148,26 @@ var Spuit = {
   },
 
   //  3点の中心点を取得
-  //  var p = Spuit.getTriangleCenter(triangle);
+  //  var p = Common.getTriangleCenter(triangle);
   getTriangleCenter : function(triangle){
-    var center = Static.getCenter(triangle[0], triangle[1]);
-    var center2 = Static.getCenter(triangle[2], center);
+    var center = Common.getCenter(triangle[0], triangle[1]);
+    var center2 = Common.getCenter(triangle[2], center);
     return center2;
   },
 
   //  ラジアン角に変更
-  //  var r = Spuit.changeRadians(degrees);
+  //  var r = Common.changeRadians(degrees);
   changeRadians : function(degrees){
     return degrees * Math.PI/180;
   },
   //  ラジアン角から変更
-  //  var r = Spuit.changeDegrees(radians);
+  //  var r = Common.changeDegrees(radians);
   changeDegrees : function(radians){
     return radians * 180/Math.PI;
   },
 
   //  sinを配列で返す
-  //  var r = Spuit.getSinWave(1, 100);
+  //  var r = Common.getSinWave(1, 100);
   getSinWave : function(value, c){
     var ar = [];
     var angle = 0;
@@ -186,7 +186,7 @@ var Spuit = {
   },
 
   //  cosを配列で返す
-  //  var r = Spuit.getCosWave(1, 100);
+  //  var r = Common.getCosWave(1, 100);
   getCosWave : function(value, c){
     var ar = [];
     var angle = 0;
@@ -206,7 +206,7 @@ var Spuit = {
 
 
   //スプライン曲線用
-  //Spuit.getSpline(x0,y0, x1,y1)
+  //Common.getSpline(x0,y0, x1,y1)
   //      var p;//now
   //      var pA;//next
   //      for (var i = 0; i < points.max-1; i++) {
@@ -220,7 +220,7 @@ var Spuit = {
   //        if(i == 0) {
   //          context.moveTo(p.pos.x, p.pos.y + plusY);
   //        } else {
-  //          var ch = Static.getSpline(pA.pos.x, pA.pos.y, p.pos.x, p.pos.y);
+  //          var ch = Common.getSpline(pA.pos.x, pA.pos.y, p.pos.x, p.pos.y);
   //          var cx = ch[0];
   //          var cy = ch[1];
   //          context.quadraticCurveTo(pA.pos.x, pA.pos.y + plusY, cx, cy + plusY);
@@ -233,7 +233,7 @@ var Spuit = {
   getSpline : function( arg1, arg2, arg3, arg4 )
   {
     var ret = {};
-    var Ho = Static.getSplinePoint( arg1, arg2, arg3, arg4 );
+    var Ho = Common.getSplinePoint( arg1, arg2, arg3, arg4 );
     var L = null;
     var S = null;
     if( arg1 < arg3 )
@@ -261,7 +261,7 @@ var Spuit = {
   //----------------------------------------------------------------------
 
   //  iPhone,iPad判別
-  //  var bo = Spuit.isiOS();
+  //  var bo = Common.isiOS();
   isiOS : function(){
     var bo = false;
     var isiPad = navigator.userAgent.match(/iPad/i) != null;
@@ -270,28 +270,28 @@ var Spuit = {
     return bo;
   },
   isApple : function(){
-    return Static.isiOS();
+    return Common.isiOS();
   },
 
   //  IE判別
-  //  var bo = Spuit.isIE();
-  //  var bo = Spuit.isIE6();
+  //  var bo = Common.isIE();
+  //  var bo = Common.isIE6();
   isIE : function(){
     return $.browser.msie;
   },
   isIE6 : function(){
     var bo = false;
-    if(Static.isIE && parseInt($.browser.version) == 6) bo = true;
+    if(Common.isIE && parseInt($.browser.version) == 6) bo = true;
     return bo;
   },
   isIE7 : function(){
     var bo = false;
-    if(Static.isIE && parseInt($.browser.version) == 7) bo = true;
+    if(Common.isIE && parseInt($.browser.version) == 7) bo = true;
     return bo;
   },
 
   //  アンドロイドバージョン判別
-  //  var bo = Spuit.lowerAndroid(2.2);
+  //  var bo = Common.lowerAndroid(2.2);
   //  alert(bo);//2.2（含まない）以下はtrue
   lowerAndroid : function(n){
     var bo = false;
