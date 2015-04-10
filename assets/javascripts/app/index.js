@@ -16,12 +16,12 @@ $(function() {
   function refresh() {
     $('.js-tip').tip({placement: 'right'});
 
-    $('.js-notification').notification();
+    $('.js-notice').notice();
   }
 
-  $(document).on('click', '.js-notification-trigger', function(event) {
+  $(document).on('click', '.js-notice-trigger', function(event) {
     event.preventDefault();
-    $('.js-notification').trigger('notification:push', {message: 'message message message', add_class: 'is-warning'});
+    $('.js-notice').trigger('notice:push', {message: 'message message message', add_class: 'is-warning'});
   });
 
 });
