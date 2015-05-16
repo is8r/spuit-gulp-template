@@ -1,5 +1,4 @@
 .sidebar
-
   .js-elevator.is-fixed
     width: 200px
 
@@ -16,8 +15,14 @@
           border-top: none
         > a
           +font(14px)
+          +border-box
           +nowrap
           display: block
           padding: 6px 0
           text-decoration: none
           color: #000
+          &:hover
+            color: $color-accent
+          &.is-current
+            border-left: 2px solid $color-accent
+            padding-left: 10px

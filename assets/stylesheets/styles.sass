@@ -36,7 +36,7 @@ section
 .sample-sassmaps
   .icon
     $icon-images: (icon-ai: 0px, icon-fl: 10px, icon-fw: 0px, icon-id: 0px, icon-ps: 0px)
-    +sass-maps($icon-images)
+    +sass-maps(50px, $icon-images, '/images/')
 
 .sample-button
   > ul
@@ -79,6 +79,8 @@ section
       +font-en(12px)
       text-transform: uppercase
       color: #000
+      &:hover
+        color: $color-accent
 
 .sample-table
   #{&}--frame

@@ -35,8 +35,10 @@
 
   <div class="l-topbar topbar">
     <div class="l-topbar__inner">
-      <h1 class="topbar__title">Spuit <span>by sass mixins libraly</span></h1>
-      <ul class="topbar__lists js-dropdown-content">
+      <h1>
+        <a href="/" class="topbar__title">Spuit <span>by sass mixins libraly</span></a>
+      </h1>
+      <ul class="topbar__lists js-dropdown-content js-current-topbar">
         <li><a href="/">Home</a></li>
         <li><a href="https://github.com/is8r/spuit" target="_blank">repository</a></li>
         <li class="topbar__pulldown pulldown">
@@ -54,31 +56,31 @@
   <div class="l-container">
     <div class="l-container__inner">
 
-      <div class="l-content content js-tempura-output">
+      <div class="l-content content">
         <h2>Examples</h2>
         @@include('./partial/_button.html')
         @@include('./partial/_disc.html')
+        @@include('./partial/_sassmaps.html')
         @@include('./partial/_form.html')
         @@include('./partial/_h.html')
         @@include('./partial/_table.html')
         @@include('./partial/_cards.html')
         @@include('./partial/_grids.html')
-        @@include('./partial/_sassmaps.html')
       </div>
 
       <div class="l-sidebar sidebar">
         <div class="js-elevator">
           <h3 class="meta">modules</h3>
           <hr />
-          <ul class="sidebar__lists">
+          <ul class="sidebar__lists js-current-sidebar">
             <li><a href="#button" class="js-scrollto">button</a></li>
             <li><a href="#disc" class="js-scrollto">disc</a></li>
+            <li><a href="#sassmaps" class="js-scrollto">sassmaps</a></li>
             <li><a href="#form" class="js-scrollto">form</a></li>
             <li><a href="#h" class="js-scrollto">h</a></li>
             <li><a href="#table" class="js-scrollto">table</a></li>
             <li><a href="#cards" class="js-scrollto">cards</a></li>
             <li><a href="#grids" class="js-scrollto">grids</a></li>
-            <li><a href="#sassmaps" class="js-scrollto">sassmaps</a></li>
 
             <!--
             <li><a href="#" data-src="template/_h.html">template/_h</a></li>

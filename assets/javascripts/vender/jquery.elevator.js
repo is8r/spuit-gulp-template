@@ -26,6 +26,7 @@ $(function () {
     }
 
     var settings = $.extend({
+      posY: 0,
       marginTop: 0
     }, options);
 
@@ -37,8 +38,11 @@ $(function () {
     });
 
     self.on('elevator:scroll', function(e) {
+      if(settings.posY == 0) {
+        settings.posY = $self.offset().top - settings.marginTop;
+      }
       if(!$self.hasClass('is-fixed')) {
-        if(Static.getScroll().y > settings.marginTop) {
+        if(Static.getScroll().y > settings.posY) {
           $self.addClass('is-fixed');
           $self.css({
             'position': 'fixed',
@@ -46,7 +50,7 @@ $(function () {
           });
         }
       } else {
-        if(Static.getScroll().y < settings.marginTop) {
+        if(Static.getScroll().y < settings.posY) {
           $self.removeClass('is-fixed');
           $self.css({
             'position': 'relative',

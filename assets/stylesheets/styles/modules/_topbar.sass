@@ -14,39 +14,56 @@
       +font-en(30px)
       float: left
       padding: 16px 10px 10px 0
-      > span
-        +font-en(12px)
-        text-transform: none
+      color: $color-def
+      text-decoration: none
+      &:hover
+        color: $color-def
+        text-decoration: none
       +media('mobile')
         +font-en(12px)
         float: none
         position: relative
         padding: 20px 10px 22px 10px
-        > span
+      > span
+        +font-en(12px)
+        text-transform: none
+        +media('mobile')
           +font-en(10px)
 
     #{&}__lists
       float: right
-      margin-top: 15px
-      > li
-        +inline-block
-        > a
-          +font-en(12px)
-          text-transform: uppercase
-          display: block
-          padding: 14px 10px
-          color: #000
-          text-decoration: none
       +media('mobile')
         position: relative
         float: none
         margin-top: 0
-        > li
+      > li
+        +inline-block
+        +media('mobile')
           display: block
           border-top: $boder
-          > a
+        > a
+          +border-box
+          +font-en(12px)
+          text-transform: uppercase
+          display: block
+          padding: 0 10px
+          height: 70px
+          line-height: 70px
+          color: #000
+          text-decoration: none
+          +media('mobile')
             +font-en(12px)
             padding: 8px 10px
+            height: auto
+            line-height: 1em
+          &:hover
+            color: $color-accent
+          &.is-current
+            +button-disabled
+            border-bottom: 2px solid $color-accent
+            +media('mobile')
+              border-bottom: none
+              border-left: 2px solid $color-accent
 
     #{&}__trigger-icon
       +disc-flat('\f0c9', 30px, 10px, $color-accent)
@@ -54,12 +71,12 @@
       top: 4px
       right: 0
       cursor: pointer
+      +media('mobile')
+        top: 12px
+        right: 10px
       &.is-disable
         display: none
       &.is-open
         &:before
           +rotate(90deg)
-      +media('mobile')
-        top: 12px
-        right: 10px
 
