@@ -129,6 +129,21 @@ var Static = {
     return Math.atan2(o2.y-o1.y, o2.x-o1.x);
   },
 
+  //  要素の座標
+  //  Static.getRect($el).top;
+  getRect : function($el){
+    return $el[0].getBoundingClientRect();
+  },
+
+  //  スクロールの座標
+  //  Static.getScroll().y;
+  getScroll : function(){
+    var de = document.documentElement, db = document.body;
+    var x = de.scrollLeft || db.scrollLeft;
+    var y = de.scrollTop || db.scrollTop;
+    return {x: x, y:y};
+  },
+
   //  ラジアン角に変更
   //  var r = Static.changeRadians(degrees);
   //  alert(r);

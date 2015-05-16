@@ -11,6 +11,7 @@ var reload = browserSync.reload;
 var plumber = require("gulp-plumber");
 var sourcemaps = require('gulp-sourcemaps');
 var minifycss = require('gulp-minify-css');
+var fileinclude = require('gulp-file-include');
 
 var paths = {
   copyElements: [
@@ -73,6 +74,7 @@ gulp.task('styles', function() {
 gulp.task('html', function() {
   gulp.src(paths.copyElements)
     .pipe(plumber())
+    .pipe(fileinclude())
     .pipe(gulp.dest('public'))
     .pipe(reload({stream:true}));
 });
