@@ -2355,6 +2355,90 @@ section {
     width: 110%; }
     .sample-form .form-select select::-ms-expand {
       display: none; }
+.sample-form .form-textarea {
+  -webkit-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: normal;
+  width: auto;
+  line-height: normal;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-color: #eee;
+  background: #fefef3;
+  width: 300px; }
+  .sample-form .form-textarea::-webkit-input-placeholder {
+    font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: normal;
+    color: #ddd; }
+  .sample-form .form-textarea::-moz-placeholder {
+    font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: normal;
+    color: #ddd; }
+  .sample-form .form-textarea:-moz-placeholder {
+    font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: normal;
+    color: #ddd; }
+  .sample-form .form-textarea:-ms-input-placeholder {
+    font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: normal;
+    color: #ddd; }
+  @media (max-width: 640px) {
+    .sample-form .form-textarea {
+      font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+      font-size: 12px;
+      font-weight: normal;
+      line-height: normal;
+      padding: 10px; }
+      .sample-form .form-textarea::-webkit-input-placeholder {
+        font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+        font-size: 12px;
+        font-weight: normal;
+        line-height: normal; }
+      .sample-form .form-textarea::-moz-placeholder {
+        font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+        font-size: 12px;
+        font-weight: normal;
+        line-height: normal; }
+      .sample-form .form-textarea:-moz-placeholder {
+        font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+        font-size: 12px;
+        font-weight: normal;
+        line-height: normal; }
+      .sample-form .form-textarea:-ms-input-placeholder {
+        font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+        font-size: 12px;
+        font-weight: normal;
+        line-height: normal; } }
+  .sample-form .form-textarea:focus {
+    outline: 0;
+    background: #fff;
+    border-color: #ccc; }
+  @media (max-width: 640px) {
+    .sample-form .form-textarea {
+      background-size: 100%;
+      background-image: -webkit-linear-gradient(to top, #fefef3, #fefef3);
+      background-image: linear-gradient(to top, #fefef3, #fefef3);
+      background-image: -moz-linear-gradient(to top, #fefef3, #fefef3);
+      background-image: linear-gradient(to top, #fefef3, #fefef3);
+      background-image: linear-gradient(to top, #fefef3, #fefef3);
+      background-image: linear-gradient(to top, #fefef3, #fefef3); } }
 
 .pulldown {
   position: relative; }
