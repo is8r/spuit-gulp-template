@@ -57,6 +57,14 @@ table {
  * @returns
  *   <Number>
  */
+.sample-table .sample-table--frame, .sample-table .sample-table--line, .sample-table .sample-table--stripe, .sample-table .sample-table--stacktable {
+  width: 100%;
+  border-collapse: collapse; }
+  .sample-table .sample-table--frame th, .sample-table .sample-table--line th, .sample-table .sample-table--stripe th, .sample-table .sample-table--stacktable th {
+    font-weight: bold; }
+  .sample-table .sample-table--frame th, .sample-table .sample-table--line th, .sample-table .sample-table--stripe th, .sample-table .sample-table--stacktable th, .sample-table .sample-table--frame td, .sample-table .sample-table--line td, .sample-table .sample-table--stripe td, .sample-table .sample-table--stacktable td {
+    padding: 5px 10px 5px 10px; }
+
 @-webkit-keyframes anim-arrow {
   0% {
     -webkit-transform: translateX(0%);
@@ -337,14 +345,6 @@ table {
     -moz-transform: rotate(360deg);
     -o-transform: rotate(360deg);
     transform: rotate(360deg); } }
-.sample-table .sample-table--frame, .sample-table .sample-table--line, .sample-table .sample-table--stripe, .sample-table .sample-table--stacktable {
-  width: 100%;
-  border-collapse: collapse; }
-  .sample-table .sample-table--frame th, .sample-table .sample-table--line th, .sample-table .sample-table--stripe th, .sample-table .sample-table--stacktable th {
-    font-weight: bold; }
-  .sample-table .sample-table--frame th, .sample-table .sample-table--line th, .sample-table .sample-table--stripe th, .sample-table .sample-table--stacktable th, .sample-table .sample-table--frame td, .sample-table .sample-table--line td, .sample-table .sample-table--stripe td, .sample-table .sample-table--stacktable td {
-    padding: 5px 10px 5px 10px; }
-
 .mt0 {
   margin-top: 0px; }
 

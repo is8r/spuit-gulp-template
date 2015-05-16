@@ -21,6 +21,9 @@ var paths = {
     'assets/javascripts/vender/**/*.js',
     'assets/javascripts/app/**/*.js'
     ],
+  spuitjs: [
+    'assets/javascripts/spuit/*.js'
+    ],
   styles: [
     'assets/stylesheets/**/*.sass'
     ]
@@ -39,6 +42,13 @@ gulp.task('browserSync', function() {
   });
 });
 
+gulp.task('spuitjs', function() {
+  gulp.src(paths.spuitjs)
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
+    .pipe(concat('spuit.js'))
+    .pipe(gulp.dest('assets/javascripts/vender'));
+});
 gulp.task('scripts', function() {
   del(['public/javascripts'], function(){});
   gulp.src(paths.scripts)
@@ -71,9 +81,10 @@ gulp.task('watch', function() {
   gulp.run('connect');
   gulp.run('browserSync');
 
+  gulp.watch([paths.copyElements], ['html']);
+  gulp.watch([paths.spuitjs], ['spuitjs']);
   gulp.watch([paths.scripts], ['scripts']);
   gulp.watch([paths.styles], ['styles']);
-  gulp.watch([paths.copyElements], ['html']);
 });
 
 

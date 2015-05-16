@@ -1,9 +1,21 @@
-// Common
+//----------------------------------------------------------------------
+// Staticクラス
 
-var Common = {
+var Static = {
 
+  //----------------------------------------------------------------------
+  //  プリロード
+  //  Static.preload(['images/a.jpg','images/b.jpg']);
+  preload : function(ar){
+    $(ar).each(function(i){
+      $('<img/>')[0].src = this;
+    });
+
+  },
+
+  //----------------------------------------------------------------------
   //  URLパラメータを受け取り
-  //  var xml = Common.getUrlVars();
+  //  var xml = Static.getUrlVars();
   //  alert(xml["xml"]);
   getUrlVars : function(){
     var vars = [], hash;
@@ -16,8 +28,9 @@ var Common = {
     return vars;
   },
 
+  //----------------------------------------------------------------------
   //  StringやjsonpデータをXMLに変換
-  //  var xmlObject = Common.string2xml(xml);
+  //  var xmlObject = Static.string2xml(xml);
   //  alert(xmlObject);
   string2xml : function(xmlData){
     if (window.ActiveXObject) {
@@ -34,13 +47,14 @@ var Common = {
     }
   },
 
+  //----------------------------------------------------------------------
   //オブジェクトの中身を確認
   showObject : function(elm,type){
-    var str = '[' + typeof elm + "]";
+    var str = '「' + typeof elm + "」の中身";
     var cnt = 0;
     for(i in elm){
       if(type == 'html'){
-        str += '<br />' + i.bold() + ' = ' + elm[i];
+        str += '<br />?n' + "[" + cnt + "] " + i.bold() + ' = ' + elm[i];
       } else {
         str += '?n' + "[" + cnt + "] " + i + ' = ' + elm[i];
       }
@@ -50,73 +64,53 @@ var Common = {
     return str;
   },
 
+  //----------------------------------------------------------------------
   //数字の頭に0を足す
   zeroPlus : function(value){
     return (n<10) ? "0"+n : n;
+    //return ("0" + value).slice(-2);
   },
 
   //----------------------------------------------------------------------
 
-  //  ランダムな文字列を返す
-  //  var n = Common.randomStrings(8);
-  randomStrings : function(length){
-    var r = "";
-    for(var i=0; i<length; i++){
-      r += Common.randomString();
-    }
-    return r;
-  },
-  randomString : function(){
-    var STRING_SET = "abcdefghijklmnopqrstuvwxyz0123456789";
-    return STRING_SET[Math.floor(Math.random()*STRING_SET.length)];
-  },
-
-  //  ランダムな数を返す
-  //  var n = Common.random(n);
+  //  ランダムな数値を返す
+  //  var n = Static.random(n);
+  //  alert(n);
   random : function(n){
     return Math.random()*n;
   },
 
-  //  ランダムな数を返す
-  //  var n = Common.randomRange(1, 2);
-  randomRange : function(min, max){
-    return min + Math.random()*(max-min);
-  },
-
   //  ランダムな整数を返す
-  //  var n = Common.randomInt(n);
+  //  var n = Static.randomInt(n);
+  //  alert(n);
   randomInt : function(n){
     return Math.floor(Math.random()*n);
   },
 
+  //  ランダムな整数を返す
+  //  var n = Static.randomIntRange(10, 20);
+  //  alert(n);
+  randomIntRange : function(min, max){
+    return Math.floor(Math.random()*(max-min)) + min;
+  },
+
   //  0か1をランダムで返す
-  //  var n = Common.randomBit();
+  //  var n = Static.randomBit();
+  //  alert(n);
   randomBit : function(n){
     return (Math.random() < .5) ? 1 : 0;
   },
 
   //  -1か1をランダムで返す
-  //  var n = Common.randomSign();
+  //  var n = Static.randomSign();
+  //  alert(n);
   randomSign : function(n){
     return (Math.random() < .5) ? -1 : 1;
   },
 
-  //  ランダムな色を取得
-  //  var r = Common.randomColor();
-  randomColor : function()
-  {
-    var letters = '0123456789ABCDEF'.split('');
-    var color = '#';
-    for (var i = 0; i < 6; i++ ) {
-      color += letters[Math.round(Math.random() * 15)];
-    }
-    return color;
-  },
-
-  //----------------------------------------------------------------------
-
   //  2点間の距離を測定
-  //  var distance = Common.getDistance(o1,o2);
+  //  var distance = Static.getDistance(o1,o2);
+  //  alert(distance);
   getDistance : function(o1,o2){
     var d,dx,dy;
     dx = o1.x - o2.x;
@@ -124,10 +118,10 @@ var Common = {
     d = Math.sqrt(dx*dx+dy*dy);
     return d;
   },
-
   //  2点間の角度を測定
-  //  var r = Common.getDegrees(o1,o2);
-  //  var r = Common.getRadians(o1,o2);
+  //  var r = Static.getDegrees(o1,o2);
+  //  var r = Static.getRadians(o1,o2);
+  //  alert(r);
   getDegrees : function(o1,o2){
     return (Math.atan2(o2.y-o1.y, o2.x-o1.x)) * 180/Math.PI;
   },
@@ -135,39 +129,22 @@ var Common = {
     return Math.atan2(o2.y-o1.y, o2.x-o1.x);
   },
 
-  //  2点の中心点を取得
-  //  var center = Common.getCenter(o1,o2);
-  getCenter : function(o1,o2){
-    var distance = Common.getDistance(o1,o2);
-    var rot = Common.getDegrees(o1,o2);
-    var dx = Math.cos(rot * Math.PI / 180) * (distance/2);
-    var dy = Math.sin(rot * Math.PI / 180) * (distance/2);
-    var x = o1.x+dx;
-    var y = o1.y+dy;
-    return {x: x, y: y};
-  },
-
-  //  3点の中心点を取得
-  //  var p = Common.getTriangleCenter(triangle);
-  getTriangleCenter : function(triangle){
-    var center = Common.getCenter(triangle[0], triangle[1]);
-    var center2 = Common.getCenter(triangle[2], center);
-    return center2;
-  },
-
   //  ラジアン角に変更
-  //  var r = Common.changeRadians(degrees);
+  //  var r = Static.changeRadians(degrees);
+  //  alert(r);
   changeRadians : function(degrees){
     return degrees * Math.PI/180;
   },
   //  ラジアン角から変更
-  //  var r = Common.changeDegrees(radians);
+  //  var r = Static.changeDegrees(radians);
+  //  alert(r);
   changeDegrees : function(radians){
     return radians * 180/Math.PI;
   },
 
   //  sinを配列で返す
-  //  var r = Common.getSinWave(1, 100);
+  //  var r = Static.getSinWave(1, 100);
+  //  trace(r);
   getSinWave : function(value, c){
     var ar = [];
     var angle = 0;
@@ -186,7 +163,8 @@ var Common = {
   },
 
   //  cosを配列で返す
-  //  var r = Common.getCosWave(1, 100);
+  //  var r = Static.getCosWave(1, 100);
+  //  trace(r);
   getCosWave : function(value, c){
     var ar = [];
     var angle = 0;
@@ -206,7 +184,7 @@ var Common = {
 
 
   //スプライン曲線用
-  //Common.getSpline(x0,y0, x1,y1)
+  //Static.getSpline(x0,y0, x1,y1)
   //      var p;//now
   //      var pA;//next
   //      for (var i = 0; i < points.max-1; i++) {
@@ -220,7 +198,7 @@ var Common = {
   //        if(i == 0) {
   //          context.moveTo(p.pos.x, p.pos.y + plusY);
   //        } else {
-  //          var ch = Common.getSpline(pA.pos.x, pA.pos.y, p.pos.x, p.pos.y);
+  //          var ch = Static.getSpline(pA.pos.x, pA.pos.y, p.pos.x, p.pos.y);
   //          var cx = ch[0];
   //          var cy = ch[1];
   //          context.quadraticCurveTo(pA.pos.x, pA.pos.y + plusY, cx, cy + plusY);
@@ -233,7 +211,7 @@ var Common = {
   getSpline : function( arg1, arg2, arg3, arg4 )
   {
     var ret = {};
-    var Ho = Common.getSplinePoint( arg1, arg2, arg3, arg4 );
+    var Ho = Static.getSplinePoint( arg1, arg2, arg3, arg4 );
     var L = null;
     var S = null;
     if( arg1 < arg3 )
@@ -258,40 +236,84 @@ var Common = {
     return ret;
   },
 
-  //----------------------------------------------------------------------
 
+  //----------------------------------------------------------------------
+  //
   //  iPhone,iPad判別
-  //  var bo = Common.isiOS();
+  //  var bo = Static.isiOS();
   isiOS : function(){
     var bo = false;
-    var isiPad = navigator.userAgent.match(/iPad/i) != null;
-    var isiPhone = navigator.userAgent.match(/iPhone/i) != null;
-    if(isiPad || isiPhone) bo = true;
+    if(navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('iPad') > 0) {
+      bo = true;
+    }
     return bo;
   },
   isApple : function(){
-    return Common.isiOS();
+    return Static.isiOS();
+  },
+  isSmartPhone : function(){
+    var bo = false;
+    if(navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('iPod') > 0 || (navigator.userAgent.indexOf('Android') > 0 && navigator.userAgent.indexOf('Mobile') > 0)){
+      //smartphone
+      bo = true;
+    }
+    return bo;
+  },
+  isTablet : function(){
+    var bo = false;
+    if(navigator.userAgent.indexOf('iPad') > 0 || (navigator.userAgent.indexOf('Android') > 0 && navigator.userAgent.indexOf('Mobile') == -1) || navigator.userAgent.indexOf('A1_07') > 0 || navigator.userAgent.indexOf('SC-01C') > 0){
+      //tablet
+      bo = true;
+    }
+    return bo;
+  },
+  isMobile : function(){
+    var bo = false;
+    if(Static.isSmartPhone() || Static.isTablet()){
+      bo = true;
+    }
+    return bo;
   },
 
+  //----------------------------------------------------------------------
   //  IE判別
-  //  var bo = Common.isIE();
-  //  var bo = Common.isIE6();
+  //  var bo = Static.isIE();
+  //  var bo = Static.isIE6();
+  //  var bo = Static.ltIE8();
   isIE : function(){
-    return $.browser.msie;
+    var bo = false;
+    if( window.navigator.userAgent.match(/(msie|MSIE)/) || window.navigator.userAgent.match(/(T|t)rident/) ) {
+      bo = true;
+    }
+    return bo;
+  },
+  isIEVersion : function(){
+    var re = -1;
+    if( Static.isIE() ) {
+      re = window.navigator.userAgent.match(/((msie|MSIE)\s|rv:)([\d\.]+)/)[3];
+      re = parseInt(re);
+    }
+    return re;
   },
   isIE6 : function(){
     var bo = false;
-    if(Common.isIE && parseInt($.browser.version) == 6) bo = true;
+    if(Static.isIE() && Static.isIEVersion() == 6) bo = true;
     return bo;
   },
   isIE7 : function(){
     var bo = false;
-    if(Common.isIE && parseInt($.browser.version) == 7) bo = true;
+    if(Static.isIE() && Static.isIEVersion() == 7) bo = true;
+    return bo;
+  },
+  ltIE8 : function(){
+    var bo = false;
+    if(Static.isIE() && Static.isIEVersion() < 8) bo = true;
     return bo;
   },
 
+  //----------------------------------------------------------------------
   //  アンドロイドバージョン判別
-  //  var bo = Common.lowerAndroid(2.2);
+  //  var bo = Static.lowerAndroid(2.2);
   //  alert(bo);//2.2（含まない）以下はtrue
   lowerAndroid : function(n){
     var bo = false;
@@ -301,6 +323,12 @@ var Common = {
       if(parseFloat(version) < n) bo = true;
     }
     return bo;
-  }
+  },
 
+  //----------------------------------------------------------------------
+  //----------------------------------------------------------------------
+  //----------------------------------------------------------------------
+  //----------------------------------------------------------------------
+  //エラー回避用
+  fin : function(){}
 }
