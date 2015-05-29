@@ -33,34 +33,37 @@ section
 .sample-body
   +body
 
-.sample-sassmaps
-  .icon
-    $icon-images: (icon-ai: 0px, icon-fl: 10px, icon-fw: 0px, icon-id: 0px, icon-ps: 0px)
-    +sass-maps(50px, $icon-images, '/images/')
-
 .sample-button
   > ul
     +ul-floats(10px)
   .button-flat
-    +button-flat(14px, $color-accent)
+    +button-flat(14px, $color-accent, #fff, 10px 20px, 2px)
   .button-semiflat
     +button-semiflat(14px, $color-accent)
   .button-border
     +button-border(14px, $color-accent, #fff)
   .button-emboss
-    +button-emboss(14px, $color-accent)
+    +button-emboss(14px, $color-accent, #fff, 10px 20px, 6px, 4px)
   .button-icon
-    +button-icon('\f113', 40px, 20px, $color-accent)
+    +fa-icon('\f113')
+    +button-flat
+  .button-icon-replace
+    +fa-replace('\f113', 16px, 40px)
+    +button-emboss(14px, $color-accent, #fff, 0 3px, 6px, 100%)
 
-.sample-disc
+
+.sample-icons
   > ul
     +ul-floats(10px)
   .disc-flat
-    +disc-flat('\f113', 40px, 20px, $color-accent)
+    +disc-flat('\f113', 20px, 40px, $color-accent)
   .disc-semiflat
-    +disc-semiflat('\f113', 40px, 20px, $color-accent)
+    +disc-semiflat('\f113', 20px, 40px, $color-accent)
   .disc-border
-    +disc-border('\f113', 40px, 20px, $color-accent)
+    +disc-border('\f113', 20px, 40px, $color-accent)
+  .icon
+    $icon-images: (icon-ai: 0px, icon-fl: 10px, icon-fw: 0px, icon-id: 0px, icon-ps: 0px)
+    +icon-images-maps(50px, $icon-images, '/images/')
 
 .sample-form
   > ul
@@ -87,30 +90,24 @@ section
         color: $color-accent
 
 .sample-table
-  #{&}--frame
+  .table--frame
     +table-frame
-  #{&}--line
+  .table--line
     +table-line
-  #{&}--stripe
+  .table--stripe
     +table-stripe
-  #{&}--stacktable
-    +table-line-stacktable
 
 .sample-chat
   .chat
     +chat
 
-.sample-cards
-  ul
-    > li
-      padding: 10px
-      height: 100px
-  .cards5
-    +cards(5, 1)
-  .cards4
-    +cards(4, 1)
-  .cards3
-    +cards(3, 1)
+.sample-split
+  .split5
+    +split(5, 1, true)
+  .split4
+    +split(4, 1, true)
+  .split3
+    +split(3, 1, true)
 
 .sample-grids
   .grids

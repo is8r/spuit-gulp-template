@@ -14,10 +14,7 @@
 =button($c: #529ef6, $c-text: #fff)
   +button-emboss(14px, $c, $c-text, 6px 20px, 6px, 2px)
   &.is-loading
-    +fa-loading
-    +opacity(0.6)
-    pointer-events: none
-    cursor: default
+    +button-loading
 
 =link($size: 14px, $color: #529ef6, $color-hover: darken(#529ef6, 10%))
   +font($size)
