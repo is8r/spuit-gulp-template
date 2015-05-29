@@ -17,30 +17,7 @@
     +button-loading
 
 =link($size: 14px, $color: #529ef6, $color-hover: darken(#529ef6, 10%))
-  +font($size)
-  color: $color
-  text-decoration: none
-  &:hover
-    color: $color
-    text-decoration: underline
-
-// =link-icon($src: 'xxx', $w: 20px, $h: 20px)
-//   +inline-block
-//   position: relative
-//   &:before
-//     +inline-block
-//     position: absolute
-//     top: 0
-//     left: 0
-//     content: ' '
-//     background-image: image-url('#{$src}.png')
-//     background-position: center center
-//     background-repeat: no-repeat
-//     background-size: cover
-//     width: $w
-//     height: $h
-//     +break-points('retina')
-//       background-image: image-url('#{$src}@2x.png')
+  +a-underline
 
 // =checkbox
 //   $size: 14px
@@ -95,29 +72,6 @@
 //       &:before
 //         +fa('\f192')
 //         color: $color-blue
-
-// =img-icon($src: 'xxx', $w: 10px, $h: 10px)
-//   &:before
-//     +inline-block
-//     content: ' '
-//     background-image: image-url('#{$src}.png')
-//     background-position: center center
-//     background-repeat: no-repeat
-//     background-size: cover
-//     width: $w
-//     height: $h
-//     +break-points('retina')
-//       background-image: image-url('#{$src}@2x.png')
-
-// =img-bg($src: 'xxx', $w: 10px, $h: 10px)
-//   background-image: image-url('#{$src}.png')
-//   background-position: center center
-//   background-repeat: no-repeat
-//   background-size: cover
-//   width: $w
-//   height: $h
-//   +break-points('retina')
-//     background-image: image-url('#{$src}@2x.png')
 
 // =list($p: 14px, $b: 1px solid #eee)
 //   border-bottom: $b

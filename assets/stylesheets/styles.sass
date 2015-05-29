@@ -33,6 +33,24 @@ section
 .sample-body
   +body
 
+.sample-link
+  > a
+    margin-right: 10px
+  .link-img-icon
+    +a-img-icon("../images/icon-ai")
+  .link-border
+    +a-border($color-accent, 0, 1px)
+  .link-color
+    +a-color($color-accent)
+  .link-underline
+    +a-underline
+  .link-underline-alt
+    +a-underline(true)
+  .link-opacity
+    +a-opacity
+  .link-arrow
+    +a-arrow
+
 .sample-button
   > ul
     +ul-floats(10px)
@@ -51,7 +69,6 @@ section
     +fa-replace('\f113', 16px, 40px)
     +button-emboss(14px, $color-accent, #fff, 0 3px, 6px, 100%)
 
-
 .sample-icons
   > ul
     +ul-floats(10px)
@@ -64,6 +81,8 @@ section
   .icon
     $icon-images: (icon-ai: 0px, icon-fl: 10px, icon-fw: 0px, icon-id: 0px, icon-ps: 0px)
     +icon-images-maps(50px, $icon-images, '/images/')
+  .icon-img
+    +img-icon("../images/icon-ai", 30px, 30px)
 
 .sample-form
   > ul
@@ -77,7 +96,6 @@ section
   .form-textarea
     +input
     width: 300px
-
 
 .pulldown
   +pulldown

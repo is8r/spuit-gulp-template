@@ -1008,15 +1008,9 @@ hr {
       border: 1px solid #ebcccc; }
 
 a {
-  font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: normal;
-  color: #529ef6;
-  text-decoration: none; }
+  text-decoration: underline; }
   a:hover {
-    color: #529ef6;
-    text-decoration: underline; }
+    text-decoration: none; }
 
 section {
   margin-top: 50px; }
@@ -1548,6 +1542,87 @@ section {
       text-align: left !important;
       color: #222;
       line-height: 1.8em; }
+
+.sample-link > a {
+  margin-right: 10px; }
+.sample-link .link-img-icon {
+  display: -moz-inline-box;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+  .sample-link .link-img-icon:before {
+    display: -moz-inline-box;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    background-image: url("../images/icon-ai.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1em;
+    height: 1em;
+    -webkit-transform: translateY(3px);
+    -ms-transform: translateY(3px);
+    -moz-transform: translateY(3px);
+    -o-transform: translateY(3px);
+    transform: translateY(3px);
+    margin-right: 0.4em;
+    content: ""; }
+    @media (-webkit-min-device-pixel-ratio: 2) {
+      .sample-link .link-img-icon:before {
+        background-image: url("../images/icon-ai@2x.png"); } }
+.sample-link .link-border {
+  text-decoration: none;
+  border-bottom: 1px solid #529ef6;
+  color: #529ef6;
+  padding-bottom: 0; }
+  .sample-link .link-border:hover {
+    border-color: transparent; }
+.sample-link .link-color {
+  color: #529ef6; }
+  .sample-link .link-color:hover {
+    color: #0952a6; }
+.sample-link .link-underline {
+  text-decoration: underline; }
+  .sample-link .link-underline:hover {
+    text-decoration: none; }
+.sample-link .link-underline-alt {
+  text-decoration: none; }
+  .sample-link .link-underline-alt:hover {
+    text-decoration: underline; }
+.sample-link .link-opacity {
+  transition: all 0.2s; }
+  .sample-link .link-opacity:hover {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; }
+.sample-link .link-arrow {
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-decoration: none; }
+  .sample-link .link-arrow:before {
+    display: -moz-inline-box;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-indent: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "";
+    font-size: 1em;
+    margin-right: 0.4em; }
+  .sample-link .link-arrow:hover:before {
+    -webkit-animation: anim-arrow 0.8s ease-out infinite;
+    -moz-animation: anim-arrow 0.8s ease-out infinite;
+    -o-animation: anim-arrow 0.8s ease-out infinite;
+    animation: anim-arrow 0.8s ease-out infinite; }
 
 .sample-button > ul {
   margin-left: -10px; }
@@ -2520,6 +2595,34 @@ section {
     background-image: url("/images/icon-id@2x.png"); }
   .sample-icons .icon.icon-ps:after {
     background-image: url("/images/icon-ps@2x.png"); } }
+.sample-icons .icon-img {
+  display: -moz-inline-box;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  overflow: hidden;
+  width: 30px;
+  height: 30px;
+  line-height: 1; }
+  .sample-icons .icon-img:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%; }
+  .sample-icons .icon-img:before {
+    display: -moz-inline-box;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    background-image: url("../images/icon-ai.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px; }
+    @media (-webkit-min-device-pixel-ratio: 2) {
+      .sample-icons .icon-img:before {
+        background-image: url("../images/icon-ai@2x.png"); } }
 
 .sample-form > ul {
   margin-left: -10px; }
