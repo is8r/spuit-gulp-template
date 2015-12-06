@@ -80,6 +80,13 @@ var Static = {
     return Math.random()*n;
   },
 
+  //  ランダムな数を返す
+  //  var n = Static.randomRange(1, 2);
+  //  alert(n);
+  randomRange : function(min, max){
+    return min + Math.random()*(max-min);
+  },
+
   //  ランダムな整数を返す
   //  var n = Static.randomInt(n);
   //  alert(n);

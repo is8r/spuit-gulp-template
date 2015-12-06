@@ -17,25 +17,26 @@
 ;(function(jQuery) {
 
   $.addScrollTo = function() {
-    $("a.js-scrollto").click(function(){
-      $.addScrollTarget($(this).attr('href'));
-      return false;
+    $('.js-scrollto').each(function(index, el) {
+      if(!$(el).attr('isReady')) {
+        $(el).attr('isReady', true);
+        $(el).click(function(){
+          $.onScroll($(this).attr('href'));
+          return false;
+        });
+      }
     });
   }
-  $.addScrollTarget = function(e) {
-    if (!e || e == "#") scrolltarget = 'body';
-    else scrolltarget = e;
-    $(scrolltarget).ScrollTo(800);
-    return false;
+  $.onScroll = function(e) {
+    if (!e || e == "#") target = 'body';
+    else target = e;
+    var margin = 20;
+    var top = 0;
+    if($(target).offset()) top = $(target).offset().top - margin;
+    $('html, body').animate({scrollTop: top}, 500, 'easeOutExpo');
   }
 
   $(function(){
-    $.fn.ScrollTo = function(speed, callback) {
-      var margin = 40;
-      var top = 0;
-      if($(this).offset()) top = $(this).offset().top - margin;
-      $('html, body').animate({scrollTop: top}, speed, 'easeOutExpo');
-    };
     $('html, body').on('mousewheel', _.throttle(function(event) {
       $('html, body').stop();
     }, 300));
@@ -44,6 +45,3 @@
   });
 
 })(jQuery);
-
-
-

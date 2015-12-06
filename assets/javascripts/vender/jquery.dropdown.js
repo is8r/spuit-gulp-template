@@ -42,7 +42,7 @@
 
             op.trigger = $element;
             plugin.initDropdown();
-            plugin.initResponsive();
+            // plugin.initResponsive();
         },
 
         //----------------------------------------------------------------------
@@ -50,6 +50,7 @@
         plugin.initDropdown = function(e) {
           if(!op.trigger.hasClass('is-open')) op.content.fadeOut(0);
           op.trigger.on('click', plugin.click);
+          $(document).on('click', plugin.clickOuter);
         },
 
         //----------------------------------------------------------------------
@@ -69,6 +70,16 @@
           op.trigger.removeClass('is-open');
           op.content.slideUp(100);
         },
+
+        plugin.clickOuter = function(e) {
+          if(op.trigger.hasClass('is-open')) {
+            if(!$(e.target).closest(op.content[0], op.trigger[0]).length ){
+              plugin.close();
+            }
+          }
+        },
+
+        //----------------------------------------------------------------------
 
         //----------------------------------------------------------------------
 

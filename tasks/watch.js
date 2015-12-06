@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
-var del = require('del');
+// var del = require('del');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var sass = require('gulp-ruby-sass');
@@ -51,7 +51,7 @@ gulp.task('spuitjs', function() {
     .pipe(gulp.dest('assets/javascripts/vender'));
 });
 gulp.task('scripts', function() {
-  del(['public/javascripts'], function(){});
+  //del(['public/javascripts'], function(){});
   gulp.src(paths.scripts)
     .pipe(plumber())
     .pipe(sourcemaps.init())
@@ -62,7 +62,7 @@ gulp.task('scripts', function() {
     .pipe(reload({stream:true}));
 });
 gulp.task('styles', function() {
-  del(['public/stylesheets'], function(){});
+  //del(['public/stylesheets'], function(){});
   gulp.src(paths.styles)
     .pipe(plumber())
     .pipe(sass({sourcemapPath: '.'}))
