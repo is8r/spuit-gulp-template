@@ -49,6 +49,7 @@ gulp.task('spuitjs', function() {
     .pipe(concat('spuit.js'))
     .pipe(gulp.dest('assets/javascripts/vender'));
 });
+
 gulp.task('scripts', function() {
   gulp.src(paths.scripts)
     .pipe(plumber())

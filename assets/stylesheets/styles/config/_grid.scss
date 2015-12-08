@@ -1,0 +1,60 @@
+// Options
+
+$enable-flex:               false !default;
+
+
+// Grid breakpoints
+
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 34em,
+  // Medium screen / tablet
+  md: 48em,
+  // Large screen / desktop
+  lg: 62em,
+  // Extra large screen / wide desktop
+  xl: 75em
+) !default;
+
+
+// Grid containers
+
+$container-max-widths: (
+  sm: 34rem,    // 480
+  md: 45rem,    // 720
+  lg: 60rem,    // 960
+  xl: 72.25rem  // 1140
+) !default;
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 1.875rem !default; // 30px
+
+//reboot
+
+$font-size-root: 16px !default;
+
+html {
+  font-size: $font-size-root;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+//imports
+
+@import "vendor/bootstrap/mixins/clearfix";
+@import "vendor/bootstrap/mixins/breakpoints";
+@import "vendor/bootstrap/mixins/grid-framework";
+@import "vendor/bootstrap/mixins/grid";
+@import "vendor/bootstrap/grid";
+
