@@ -42,7 +42,7 @@ $(function () {
         settings.posY = $self.offset().top - settings.marginTop;
       }
       if(!$self.hasClass('is-fixed')) {
-        if(Static.getScroll().y > settings.posY) {
+        if(Util.getScroll().y > settings.posY) {
           $self.addClass('is-fixed');
           $self.css({
             'position': 'fixed',
@@ -50,7 +50,7 @@ $(function () {
           });
         }
       } else {
-        if(Static.getScroll().y < settings.posY) {
+        if(Util.getScroll().y < settings.posY) {
           $self.removeClass('is-fixed');
           $self.css({
             'position': 'relative',

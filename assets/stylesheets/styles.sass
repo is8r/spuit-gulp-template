@@ -4,7 +4,6 @@
 @import "styles/config/settings"
 @import "styles/config/mixins"
 @import "styles/config/base"
-@import "styles/config/layouts"
 
 @import "styles/modules/topbar"
 @import "styles/modules/sidebar"
@@ -17,18 +16,14 @@
 a
   +link
 
-section
-  margin-top: 50px
+.container
+  max-width: 960px
 
 .meta
   +meta
 
 .button
   +button
-
-.sample-formset
-  +formset($color-select, #fff, #dedede, $color-accent, #ddd, 160px)
-  +font(14px)
 
 .sample-body
   +body
@@ -66,40 +61,31 @@ section
     +fa-icon('\f113')
     +button-flat
   .button-icon-replace
-    +fa-replace('\f113', 16px, 40px)
-    +button-emboss(14px, $color-accent, #fff, 0 3px, 6px, 100%)
+    +fa-replace('\f113', 40px, 1.2em)
+    +button-emboss(14px, $color-accent, #fff, 0, 6px, 40px)
 
 .sample-icons
   > ul
     +ul-floats(10px)
-  .disc-flat
-    +disc-flat('\f113', 20px, 40px, $color-accent)
-  .disc-semiflat
-    +disc-semiflat('\f113', 20px, 40px, $color-accent)
-  .disc-border
-    +disc-border('\f113', 20px, 40px, $color-accent)
   .icon
     $icon-images: (icon-ai: 0px, icon-fl: 10px, icon-fw: 0px, icon-id: 0px, icon-ps: 0px)
     +icon-images-maps(50px, $icon-images, '/images/')
   .icon-img
-    +img-icon("../images/icon-ai", 30px, 30px)
+    +icon-image("../images/icon-ai", 30px, 30px)
 
 .sample-form
   > ul
     +ul-floats(10px)
   .form-input
     +input
-    width: 200px
   .form-select
     +select
-    width: 200px
   .form-textarea
     +input
-    width: 300px
 
 .pulldown
   +pulldown
-  .pulldown__content
+  &__content
     a
       +font-en(12px)
       text-transform: uppercase

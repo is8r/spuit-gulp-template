@@ -53,7 +53,7 @@ $(function () {
       for (var i = 0; i < settings.hrefs.length; i++) {
         var $el = $(settings.hrefs[i]);
         var posY = $el.offset().top - settings.marginTop;
-        if(posY < Static.getScroll().y) {
+        if(posY < Util.getScroll().y) {
           self.trigger('current:active', settings.hrefs[i]);
           reset = false;
           break;

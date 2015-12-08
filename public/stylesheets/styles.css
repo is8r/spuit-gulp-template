@@ -49,14 +49,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/*
- * Returns a number without unit. E.g. 30px -> 30
- * Borrowed from https://github.com/zurb/foundation/blob/master/scss/foundation/_functions.scss
- *
- * @param value {String}
- * @returns
- *   <Number>
- */
 @-webkit-keyframes anim-arrow {
   0% {
     -webkit-transform: translateX(0%);
@@ -468,130 +460,6 @@ hr {
   height: 1px;
   border: none; }
 
-.l-container {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  min-width: 960px;
-  position: relative;
-  padding-top: 100px;
-  background: rgba(114, 1, 183, 0); }
-  @media (min-width: 640px) and (max-width: 980px) {
-    .l-container {
-      width: auto;
-      min-width: 0; } }
-  @media (max-width: 640px) {
-    .l-container {
-      width: auto;
-      min-width: 0; } }
-  .l-container__inner {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    position: relative;
-    display: block;
-    width: 960px;
-    margin: 0 auto;
-    text-align: left; }
-    @media (min-width: 640px) and (max-width: 980px) {
-      .l-container__inner {
-        width: 100%;
-        padding-left: 10px;
-        padding-right: 10px; } }
-    @media (max-width: 640px) {
-      .l-container__inner {
-        width: 100%;
-        padding-left: 10px;
-        padding-right: 10px; } }
-  .l-container:after {
-    content: "";
-    display: table;
-    clear: both; }
-  @media (min-width: 640px) and (max-width: 980px) {
-    .l-container {
-      padding-top: 30px; } }
-  @media (max-width: 640px) {
-    .l-container {
-      padding-top: 20px; } }
-
-.l-topbar {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  min-width: 960px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%; }
-  @media (min-width: 640px) and (max-width: 980px) {
-    .l-topbar {
-      width: auto;
-      min-width: 0; } }
-  @media (max-width: 640px) {
-    .l-topbar {
-      width: auto;
-      min-width: 0; } }
-  .l-topbar__inner {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    position: relative;
-    display: block;
-    width: 960px;
-    margin: 0 auto;
-    text-align: left; }
-    @media (min-width: 640px) and (max-width: 980px) {
-      .l-topbar__inner {
-        width: 100%;
-        padding-left: 0;
-        padding-right: 0; } }
-    @media (max-width: 640px) {
-      .l-topbar__inner {
-        width: 100%;
-        padding-left: 0;
-        padding-right: 0; } }
-  @media (min-width: 640px) and (max-width: 980px) {
-    .l-topbar {
-      position: relative;
-      padding-left: 10px;
-      padding-right: 10px; } }
-  @media (max-width: 640px) {
-    .l-topbar {
-      position: relative; } }
-
-.l-content {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  background: rgba(114, 1, 183, 0);
-  width: 720px;
-  float: left; }
-  @media (min-width: 640px) and (max-width: 980px) {
-    .l-content {
-      width: 75%; } }
-  @media (max-width: 640px) {
-    .l-content {
-      width: auto;
-      float: none; } }
-
-.l-sidebar {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  background: rgba(174, 1, 183, 0);
-  width: 200px;
-  float: right; }
-  @media (min-width: 640px) and (max-width: 980px) {
-    .l-sidebar {
-      width: 25%;
-      padding-left: 20px; } }
-  @media (max-width: 640px) {
-    .l-sidebar {
-      width: auto;
-      float: none; } }
-
 .topbar {
   z-index: 999;
   background: #fff;
@@ -601,159 +469,109 @@ hr {
     content: "";
     display: table;
     clear: both; }
+  .topbar .navbar-collapse,
+  .topbar .navbar-toggle {
+    padding: 0;
+    border: none; }
   @media (max-width: 640px) {
     .topbar {
-      height: auto; } }
-  .topbar__title {
-    font-family: "Montserrat", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
-    font-size: 30px;
-    font-weight: normal;
-    line-height: normal;
-    float: left;
-    padding: 16px 10px 10px 0;
+      height: auto;
+      margin-left: -15px;
+      margin-right: -15px; } }
+.topbar__title {
+  font-family: "Montserrat", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  font-size: 30px;
+  font-weight: normal;
+  line-height: normal;
+  display: -moz-inline-box;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  float: left;
+  padding: 16px 10px 10px 0;
+  color: #222;
+  text-decoration: none; }
+  .topbar__title:hover {
     color: #222;
     text-decoration: none; }
-    .topbar__title:hover {
-      color: #222;
-      text-decoration: none; }
+  @media (max-width: 640px) {
+    .topbar__title {
+      font-family: "Montserrat", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+      font-size: 22px;
+      font-weight: normal;
+      line-height: normal;
+      float: none;
+      position: relative;
+      padding: 10px 10px; } }
+  .topbar__title > span {
+    font-family: "Montserrat", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: normal;
+    text-transform: none; }
     @media (max-width: 640px) {
-      .topbar__title {
+      .topbar__title > span {
         font-family: "Montserrat", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
-        font-size: 12px;
+        font-size: 10px;
         font-weight: normal;
-        line-height: normal;
-        float: none;
-        position: relative;
-        padding: 20px 10px 22px 10px; } }
-    .topbar__title > span {
+        line-height: normal; } }
+.topbar__lists {
+  float: right; }
+  @media (max-width: 640px) {
+    .topbar__lists {
+      position: relative;
+      float: none;
+      margin-top: 0; } }
+  .topbar__lists > li {
+    display: -moz-inline-box;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1; }
+    @media (max-width: 640px) {
+      .topbar__lists > li {
+        display: block;
+        border-top: 1px solid #eee; } }
+    .topbar__lists > li > a {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
       font-family: "Montserrat", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
       font-size: 12px;
       font-weight: normal;
       line-height: normal;
-      text-transform: none; }
+      text-transform: uppercase;
+      display: block;
+      padding: 0 10px;
+      height: 70px;
+      line-height: 70px;
+      color: #000;
+      text-decoration: none; }
       @media (max-width: 640px) {
-        .topbar__title > span {
+        .topbar__lists > li > a {
           font-family: "Montserrat", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
-          font-size: 10px;
+          font-size: 12px;
           font-weight: normal;
-          line-height: normal; } }
-
-  .topbar__lists {
-    float: right; }
-    @media (max-width: 640px) {
-      .topbar__lists {
-        position: relative;
-        float: none;
-        margin-top: 0; } }
-    .topbar__lists > li {
-      display: -moz-inline-box;
-      display: inline-block;
-      *display: inline;
-      *zoom: 1; }
-      @media (max-width: 640px) {
-        .topbar__lists > li {
-          display: block;
-          border-top: 1px solid #eee; } }
-      .topbar__lists > li > a {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        font-family: "Montserrat", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
-        font-size: 12px;
-        font-weight: normal;
-        line-height: normal;
-        text-transform: uppercase;
-        display: block;
-        padding: 0 10px;
-        height: 70px;
-        line-height: 70px;
-        color: #000;
-        text-decoration: none; }
+          line-height: normal;
+          padding: 8px 10px;
+          height: auto;
+          line-height: 1em; } }
+      .topbar__lists > li > a:hover {
+        color: #529ef6; }
+      .topbar__lists > li > a.is-current {
+        cursor: default;
+        pointer-events: none;
+        border-bottom: 2px solid #529ef6; }
         @media (max-width: 640px) {
-          .topbar__lists > li > a {
-            font-family: "Montserrat", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
-            font-size: 12px;
-            font-weight: normal;
-            line-height: normal;
-            padding: 8px 10px;
-            height: auto;
-            line-height: 1em; } }
-        .topbar__lists > li > a:hover {
-          color: #529ef6; }
-        .topbar__lists > li > a.is-current {
-          cursor: default;
-          pointer-events: none;
-          border-bottom: 2px solid #529ef6; }
-          @media (max-width: 640px) {
-            .topbar__lists > li > a.is-current {
-              border-bottom: none;
-              border-left: 2px solid #529ef6; } }
-
-  .topbar__trigger-icon {
-    display: -moz-inline-box;
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-    overflow: hidden;
-    width: 10px;
-    height: 10px;
-    line-height: 10px;
-    -webkit-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -o-border-radius: 10px;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -o-border-radius: 10px;
-    border-radius: 10px;
-    background: #529ef6;
+          .topbar__lists > li > a.is-current {
+            border-bottom: none;
+            border-left: 2px solid #529ef6; } }
+@media (max-width: 640px) {
+  .topbar__toggle {
     position: absolute;
     top: 4px;
     right: 0;
-    cursor: pointer; }
-    .topbar__trigger-icon:before {
-      content: "";
-      display: block;
-      width: 0;
-      height: 100%; }
-    .topbar__trigger-icon:before {
-      display: -moz-inline-box;
-      display: inline-block;
-      *display: inline;
-      *zoom: 1;
-      width: 10px;
-      height: 10px;
-      line-height: 10px;
-      text-align: center;
-      text-indent: 0; }
-    .topbar__trigger-icon:before {
-      display: -moz-inline-box;
-      display: inline-block;
-      *display: inline;
-      *zoom: 1;
-      font-family: FontAwesome;
-      font-style: normal;
-      font-weight: normal;
-      text-indent: 0;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      content: "";
-      font-size: 30px;
-      color: #fff; }
-    @media (max-width: 640px) {
-      .topbar__trigger-icon {
-        top: 12px;
-        right: 10px; } }
-    .topbar__trigger-icon.is-disable {
-      display: none; }
-    .topbar__trigger-icon.is-open:before {
-      -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-      -moz-transform: rotate(90deg);
-      -o-transform: rotate(90deg);
-      transform: rotate(90deg); }
+    z-index: 999;
+    cursor: pointer; } }
 
 .sidebar .js-elevator.is-fixed {
   width: 200px; }
@@ -764,7 +582,6 @@ hr {
   line-height: normal;
   color: #000;
   margin-bottom: 10px; }
-
 .sidebar__lists {
   width: 100%; }
   .sidebar__lists > li {
@@ -794,45 +611,15 @@ hr {
         padding-left: 10px; }
 
 .footer {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  min-width: 960px;
   margin-top: 40px;
-  border-top: 1px solid #eee; }
-  @media (min-width: 640px) and (max-width: 980px) {
-    .footer {
-      width: auto;
-      min-width: 0; } }
-  @media (max-width: 640px) {
-    .footer {
-      width: auto;
-      min-width: 0; } }
-  .footer__inner {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    position: relative;
-    display: block;
-    width: 960px;
-    margin: 0 auto;
-    text-align: left; }
-    @media (min-width: 640px) and (max-width: 980px) {
-      .footer__inner {
-        width: 100%;
-        padding-left: 10px;
-        padding-right: 10px; } }
-    @media (max-width: 640px) {
-      .footer__inner {
-        width: 100%;
-        padding-left: 10px;
-        padding-right: 10px; } }
-  .footer__copyright {
-    font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
-    font-size: 10px;
-    font-weight: normal;
-    line-height: normal; }
+  border-top: 1px solid #eee;
+  text-align: center;
+  padding: 10px 0; }
+.footer__copyright {
+  font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  font-size: 10px;
+  font-weight: normal;
+  line-height: normal; }
 
 .tip {
   display: -moz-inline-box;
@@ -1012,8 +799,8 @@ a {
   a:hover {
     text-decoration: none; }
 
-section {
-  margin-top: 50px; }
+.container {
+  max-width: 960px; }
 
 .meta {
   font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
@@ -1099,6 +886,7 @@ section {
         font-family: FontAwesome;
         font-style: normal;
         font-weight: normal;
+        line-height: 1;
         text-indent: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -1174,6 +962,7 @@ section {
         font-family: FontAwesome;
         font-style: normal;
         font-weight: normal;
+        line-height: 1;
         text-indent: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -1185,161 +974,6 @@ section {
         -moz-animation: anim-spin 1.6s infinite linear;
         -o-animation: anim-spin 1.6s infinite linear;
         animation: anim-spin 1.6s infinite linear; }
-
-.sample-formset {
-  font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
-  font-size: 1em;
-  font-weight: normal;
-  line-height: normal;
-  font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: normal; }
-  .sample-formset input[type=text],
-  .sample-formset input[type=email],
-  .sample-formset input[type=url],
-  .sample-formset input[type=password],
-  .sample-formset input[type=number],
-  .sample-formset textarea {
-    -webkit-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -o-border-radius: 2px;
-    border-radius: 2px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
-    font-size: 1em;
-    font-weight: normal;
-    line-height: normal;
-    width: auto;
-    line-height: normal;
-    border: 1px solid transparent;
-    border-color: #dedede;
-    padding: 10px;
-    background: #fefef3; }
-    .sample-formset input[type=text]::-webkit-input-placeholder,
-    .sample-formset input[type=email]::-webkit-input-placeholder,
-    .sample-formset input[type=url]::-webkit-input-placeholder,
-    .sample-formset input[type=password]::-webkit-input-placeholder,
-    .sample-formset input[type=number]::-webkit-input-placeholder,
-    .sample-formset textarea::-webkit-input-placeholder {
-      font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
-      font-size: 1em;
-      font-weight: normal;
-      line-height: normal;
-      color: #ddd; }
-    .sample-formset input[type=text]::-moz-placeholder,
-    .sample-formset input[type=email]::-moz-placeholder,
-    .sample-formset input[type=url]::-moz-placeholder,
-    .sample-formset input[type=password]::-moz-placeholder,
-    .sample-formset input[type=number]::-moz-placeholder,
-    .sample-formset textarea::-moz-placeholder {
-      font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
-      font-size: 1em;
-      font-weight: normal;
-      line-height: normal;
-      color: #ddd; }
-    .sample-formset input[type=text]:-moz-placeholder,
-    .sample-formset input[type=email]:-moz-placeholder,
-    .sample-formset input[type=url]:-moz-placeholder,
-    .sample-formset input[type=password]:-moz-placeholder,
-    .sample-formset input[type=number]:-moz-placeholder,
-    .sample-formset textarea:-moz-placeholder {
-      font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
-      font-size: 1em;
-      font-weight: normal;
-      line-height: normal;
-      color: #ddd; }
-    .sample-formset input[type=text]:-ms-input-placeholder,
-    .sample-formset input[type=email]:-ms-input-placeholder,
-    .sample-formset input[type=url]:-ms-input-placeholder,
-    .sample-formset input[type=password]:-ms-input-placeholder,
-    .sample-formset input[type=number]:-ms-input-placeholder,
-    .sample-formset textarea:-ms-input-placeholder {
-      font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
-      font-size: 1em;
-      font-weight: normal;
-      line-height: normal;
-      color: #ddd; }
-  .sample-formset input[type=text],
-  .sample-formset input[type=email],
-  .sample-formset input[type=url],
-  .sample-formset input[type=password] {
-    width: 50%; }
-  .sample-formset input[type=text]:focus,
-  .sample-formset input[type=email]:focus,
-  .sample-formset input[type=url]:focus,
-  .sample-formset input[type=password]:focus,
-  .sample-formset textarea:focus {
-    outline: 0;
-    border-color: #529ef6;
-    background: #fff; }
-  .sample-formset input[type=radio], .sample-formset input[type=radio] + label,
-  .sample-formset input[type=checkbox], .sample-formset input[type=checkbox] + label {
-    cursor: pointer; }
-  @media screen and (max-width: 640px) {
-    .sample-formset input[type=text],
-    .sample-formset input[type=email],
-    .sample-formset input[type=url],
-    .sample-formset input[type=password],
-    .sample-formset textarea {
-      background-size: 100%;
-      background-image: -webkit-linear-gradient(to top, white, white);
-      background-image: linear-gradient(to top, white, white);
-      background-image: -moz-linear-gradient(to top, white, white);
-      background-image: linear-gradient(to top, white, white);
-      background-image: linear-gradient(to top, white, white);
-      background-image: linear-gradient(to top, white, white);
-      width: 100%; }
-    .sample-formset textarea {
-      height: 100px; } }
-  .sample-formset__description {
-    margin: 30px 0 30px 0; }
-
-  .sample-formset__list > li {
-    margin-top: 4px; }
-    .sample-formset__list > li:first-child {
-      margin-top: 0; }
-    .sample-formset__list > li > label {
-      margin-left: 6px; }
-
-  .sample-formset__field, .field {
-    position: relative;
-    margin-top: 10px;
-    padding: 0 22px 5px 0;
-    padding-left: 160px; }
-    .sample-formset__field:after, .field:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .sample-formset__field > label, .sample-formset__field > legend, .field > label, .field > legend {
-      position: absolute;
-      left: 0px;
-      width: 140px; }
-    .sample-formset__field > .text, .field > .text {
-      width: 60%;
-      height: 20px;
-      overflow: hidden;
-      resize: none; }
-    .sample-formset__field > textarea, .field > textarea {
-      width: 100%;
-      height: 200px; }
-
-  @media screen and (max-width: 640px) {
-    .sample-formset__field, .field {
-      margin: 0 0 10px 0;
-      padding-left: 0; }
-      .sample-formset__field > label, .sample-formset__field > legend, .field > label, .field > legend {
-        position: relative;
-        display: block;
-        width: auto;
-        padding-bottom: 4px; }
-      .sample-formset__field > .text,
-      .sample-formset__field > textarea, .field > .text,
-      .field > textarea {
-        width: 100%; } }
 
 .sample-body {
   width: 100%;
@@ -1612,6 +1246,7 @@ section {
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
+    line-height: 1;
     text-indent: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -1707,6 +1342,7 @@ section {
         font-family: FontAwesome;
         font-style: normal;
         font-weight: normal;
+        line-height: 1;
         text-indent: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -1805,6 +1441,7 @@ section {
         font-family: FontAwesome;
         font-style: normal;
         font-weight: normal;
+        line-height: 1;
         text-indent: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -1917,6 +1554,7 @@ section {
         font-family: FontAwesome;
         font-style: normal;
         font-weight: normal;
+        line-height: 1;
         text-indent: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -2018,6 +1656,7 @@ section {
         font-family: FontAwesome;
         font-style: normal;
         font-weight: normal;
+        line-height: 1;
         text-indent: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -2136,6 +1775,7 @@ section {
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
+    line-height: 1;
     text-indent: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -2163,6 +1803,7 @@ section {
         font-family: FontAwesome;
         font-style: normal;
         font-weight: normal;
+        line-height: 1;
         text-indent: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -2190,8 +1831,6 @@ section {
   overflow: hidden;
   width: 40px;
   height: 40px;
-  line-height: 40px;
-  position: relative;
   display: -moz-inline-box;
   display: inline-block;
   *display: inline;
@@ -2228,11 +1867,11 @@ section {
   border: none;
   outline: none;
   text-decoration: none;
-  -webkit-border-radius: 100%;
-  -ms-border-radius: 100%;
-  -moz-border-radius: 100%;
-  -o-border-radius: 100%;
-  border-radius: 100%;
+  -webkit-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -o-border-radius: 40px;
+  border-radius: 40px;
   transition: background-color 0.2s ease-out;
   font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   font-size: 14px;
@@ -2245,7 +1884,7 @@ section {
   box-shadow: 0 6px 0 #2283f3;
   background: #529ef6;
   color: #fff;
-  padding: 0 3px; }
+  padding: 0; }
   .sample-button .button-icon-replace:before {
     content: "";
     display: block;
@@ -2256,25 +1895,20 @@ section {
     display: inline-block;
     *display: inline;
     *zoom: 1;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    text-indent: 0; }
-  .sample-button .button-icon-replace:before {
-    display: -moz-inline-box;
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
+    line-height: 1;
     text-indent: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     content: "";
-    font-size: 16px;
-    margin-right: 0; }
+    font-size: 1.2em;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: top;
+    text-align: center; }
   .sample-button .button-icon-replace:focus {
     outline: none; }
   .sample-button .button-icon-replace.is-disabled {
@@ -2296,6 +1930,7 @@ section {
         font-family: FontAwesome;
         font-style: normal;
         font-weight: normal;
+        line-height: 1;
         text-indent: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -2368,162 +2003,6 @@ section {
     margin-bottom: 10px; }
     .sample-icons > ul > li > a {
       display: block; }
-.sample-icons .disc-flat {
-  display: -moz-inline-box;
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  overflow: hidden;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  -webkit-border-radius: 40px;
-  -ms-border-radius: 40px;
-  -moz-border-radius: 40px;
-  -o-border-radius: 40px;
-  border-radius: 40px;
-  -webkit-border-radius: 40px;
-  -ms-border-radius: 40px;
-  -moz-border-radius: 40px;
-  -o-border-radius: 40px;
-  border-radius: 40px;
-  background: #529ef6; }
-  .sample-icons .disc-flat:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 100%; }
-  .sample-icons .disc-flat:before {
-    display: -moz-inline-box;
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    text-indent: 0; }
-  .sample-icons .disc-flat:before {
-    display: -moz-inline-box;
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-indent: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    content: "";
-    font-size: 20px;
-    color: #fff; }
-.sample-icons .disc-semiflat {
-  display: -moz-inline-box;
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  overflow: hidden;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  -webkit-border-radius: 40px;
-  -ms-border-radius: 40px;
-  -moz-border-radius: 40px;
-  -o-border-radius: 40px;
-  border-radius: 40px;
-  -webkit-border-radius: 40px;
-  -ms-border-radius: 40px;
-  -moz-border-radius: 40px;
-  -o-border-radius: 40px;
-  border-radius: 40px;
-  background: #529ef6; }
-  .sample-icons .disc-semiflat:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 100%; }
-  .sample-icons .disc-semiflat:before {
-    display: -moz-inline-box;
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    text-indent: 0; }
-  .sample-icons .disc-semiflat:before {
-    display: -moz-inline-box;
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-indent: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    content: "";
-    font-size: 20px;
-    color: #fff; }
-  .sample-icons .disc-semiflat:before {
-    background-size: 100%;
-    background-image: -webkit-linear-gradient(to top, #529ef6, #82b9f9);
-    background-image: linear-gradient(to top, #529ef6, #82b9f9);
-    background-image: -moz-linear-gradient(to top, #529ef6, #82b9f9);
-    background-image: linear-gradient(to top, #529ef6, #82b9f9);
-    background-image: linear-gradient(to top, #529ef6, #82b9f9);
-    background-image: linear-gradient(to top, #529ef6, #82b9f9);
-    margin-right: 0; }
-.sample-icons .disc-border {
-  display: -moz-inline-box;
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  overflow: hidden;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  -webkit-border-radius: 40px;
-  -ms-border-radius: 40px;
-  -moz-border-radius: 40px;
-  -o-border-radius: 40px;
-  border-radius: 40px;
-  -webkit-border-radius: 40px;
-  -ms-border-radius: 40px;
-  -moz-border-radius: 40px;
-  -o-border-radius: 40px;
-  border-radius: 40px;
-  border: 1px solid #529ef6; }
-  .sample-icons .disc-border:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 100%; }
-  .sample-icons .disc-border:before {
-    display: -moz-inline-box;
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    text-indent: 0; }
-  .sample-icons .disc-border:before {
-    display: -moz-inline-box;
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-indent: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    content: "";
-    font-size: 20px;
-    color: #529ef6; }
 .sample-icons .icon.icon-ai:after {
   display: -moz-inline-box;
   display: inline-block;
@@ -2655,7 +2134,13 @@ section {
   border: 1px solid transparent;
   border-color: #eee;
   background: #fefef3;
-  width: 200px; }
+  background-size: 100%;
+  background-image: -webkit-linear-gradient(transparent, transparent);
+  background-image: linear-gradient(transparent, transparent);
+  background-image: -moz-linear-gradient(transparent, transparent);
+  background-image: linear-gradient(transparent, transparent);
+  background-image: linear-gradient(transparent, transparent);
+  background-image: linear-gradient(transparent, transparent); }
   .sample-form .form-input::-webkit-input-placeholder {
     font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
     font-size: 14px;
@@ -2708,9 +2193,21 @@ section {
         font-weight: normal;
         line-height: normal; } }
   .sample-form .form-input:focus {
+    -webkit-box-shadow: #ccc 0 0 10px;
+    -ms-box-shadow: #ccc 0 0 10px;
+    -moz-box-shadow: #ccc 0 0 10px;
+    -o-box-shadow: #ccc 0 0 10px;
+    box-shadow: #ccc 0 0 10px;
     outline: 0;
     background: #fff;
-    border-color: #ccc; }
+    border-color: #ccc;
+    background-size: 100%;
+    background-image: -webkit-linear-gradient(transparent, transparent);
+    background-image: linear-gradient(transparent, transparent);
+    background-image: -moz-linear-gradient(transparent, transparent);
+    background-image: linear-gradient(transparent, transparent);
+    background-image: linear-gradient(transparent, transparent);
+    background-image: linear-gradient(transparent, transparent); }
   @media (max-width: 640px) {
     .sample-form .form-input {
       background-size: 100%;
@@ -2733,7 +2230,26 @@ section {
   overflow: hidden;
   border: 1px solid #eee;
   width: 100%;
-  width: 200px; }
+  margin-right: 10px; }
+  .sample-form .form-select:before {
+    display: -moz-inline-box;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-indent: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "";
+    position: absolute;
+    left: auto;
+    right: 10px;
+    top: 50%;
+    bottom: auto;
+    margin-top: -8px; }
   .sample-form .form-select select {
     -webkit-appearance: none;
     -ms-appearance: none;
@@ -2765,7 +2281,7 @@ section {
     -moz-box-sizing: content-box;
     box-sizing: content-box;
     width: 100%;
-    padding: 12px 12px 12px 12px;
+    padding: 10px 20px 10px 10px;
     cursor: pointer;
     color: #000;
     background: #fff; }
@@ -2774,23 +2290,6 @@ section {
     .sample-form .form-select select:focus {
       outline: none;
       border: none; }
-  .sample-form .form-select:before {
-    display: -moz-inline-box;
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-indent: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    content: "";
-    position: absolute;
-    left: auto;
-    right: 6px;
-    top: 12px;
-    bottom: auto; }
   .sample-form .form-select select {
     width: 110%; }
     .sample-form .form-select select::-ms-expand {
@@ -2814,7 +2313,13 @@ section {
   border: 1px solid transparent;
   border-color: #eee;
   background: #fefef3;
-  width: 300px; }
+  background-size: 100%;
+  background-image: -webkit-linear-gradient(transparent, transparent);
+  background-image: linear-gradient(transparent, transparent);
+  background-image: -moz-linear-gradient(transparent, transparent);
+  background-image: linear-gradient(transparent, transparent);
+  background-image: linear-gradient(transparent, transparent);
+  background-image: linear-gradient(transparent, transparent); }
   .sample-form .form-textarea::-webkit-input-placeholder {
     font-family: "Open Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
     font-size: 14px;
@@ -2867,9 +2372,21 @@ section {
         font-weight: normal;
         line-height: normal; } }
   .sample-form .form-textarea:focus {
+    -webkit-box-shadow: #ccc 0 0 10px;
+    -ms-box-shadow: #ccc 0 0 10px;
+    -moz-box-shadow: #ccc 0 0 10px;
+    -o-box-shadow: #ccc 0 0 10px;
+    box-shadow: #ccc 0 0 10px;
     outline: 0;
     background: #fff;
-    border-color: #ccc; }
+    border-color: #ccc;
+    background-size: 100%;
+    background-image: -webkit-linear-gradient(transparent, transparent);
+    background-image: linear-gradient(transparent, transparent);
+    background-image: -moz-linear-gradient(transparent, transparent);
+    background-image: linear-gradient(transparent, transparent);
+    background-image: linear-gradient(transparent, transparent);
+    background-image: linear-gradient(transparent, transparent); }
   @media (max-width: 640px) {
     .sample-form .form-textarea {
       background-size: 100%;
@@ -2985,14 +2502,14 @@ section {
           text-align: left; }
         .pulldown .pulldown__content:after {
           display: none; } }
-  .pulldown .pulldown__content a {
+  .pulldown__content a {
     font-family: "Montserrat", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
     font-size: 12px;
     font-weight: normal;
     line-height: normal;
     text-transform: uppercase;
     color: #000; }
-    .pulldown .pulldown__content a:hover {
+    .pulldown__content a:hover {
       color: #529ef6; }
 
 .sample-table .table--frame {
@@ -3954,6 +3471,7 @@ section {
         font-family: FontAwesome;
         font-style: normal;
         font-weight: normal;
+        line-height: 1;
         text-indent: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -4071,6 +3589,7 @@ section {
           font-family: FontAwesome;
           font-style: normal;
           font-weight: normal;
+          line-height: 1;
           text-indent: 0;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
@@ -4094,7 +3613,7 @@ section {
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)"; }
     .dialog .dialog-btn.is-current {
       background-color: #000;
-      color: #fff;
+      color: 8px 20px 6px 20px;
       border-color: transparet; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -4,4 +4,4 @@ function log(){
   console.log.apply(console, jQuery.makeArray(arguments));
 }
 trace = log;
-
+print = log;

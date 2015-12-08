@@ -17,7 +17,7 @@
     $.extend({
         nowOrientation: -1,
         viewports: function() {
-          if(Static.isMobile()) {
+          if(Util.isMobile()) {
             $(window).on('orientationchange resize load', $.orientationCheck);
             $.orientationCheck();
           }
