@@ -11,6 +11,7 @@ var plumber = require("gulp-plumber");
 var sourcemaps = require('gulp-sourcemaps');
 var minifycss = require('gulp-minify-css');
 var fileinclude = require('gulp-file-include');
+var postcss = require('gulp-postcss');
 
 var paths = {
   copyElements: [
@@ -60,11 +61,16 @@ gulp.task('scripts', function() {
     .pipe(reload({stream:true}));
 });
 gulp.task('styles', function() {
+  var processors = [
+    require('autoprefixer')({ browsers: ['last 2 version', 'ie 8'], cascade: false })
+  ];
+
   gulp.src(paths.styles)
     .pipe(plumber())
     .pipe(sass({sourcemapPath: '.'}))
     //.on('error', function (e) { console.log(e.message); })
     //.pipe(minifycss())
+    .pipe(postcss(processors))
     .pipe(gulp.dest('public/stylesheets'))
     .pipe(reload({stream:true}));
 });

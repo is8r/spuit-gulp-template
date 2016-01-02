@@ -35,6 +35,10 @@ $(function () {
       $(window).on('scroll', _.throttle(function(event) {
         self.trigger('elevator:scroll', event);
       }, 30));
+      $(window).on('resize', _.throttle(function(event) {
+        self.trigger('elevator:scroll', event);
+      }, 30));
+
     });
 
     self.on('elevator:scroll', function(e) {
@@ -46,6 +50,7 @@ $(function () {
           $self.addClass('is-fixed');
           $self.css({
             'position': 'fixed',
+            'width': $self.closest('section').width(),
             'top': settings.marginTop+'px'
           });
         }
