@@ -14,8 +14,7 @@ var fileinclude = require('gulp-file-include');
 
 var paths = {
   copyElements: [
-    'assets/views/**/*.html',
-    'assets/views/**/*.png'
+    'assets/views/**/*.html'
     ],
   scripts: [
     'assets/javascripts/vender/**/*.js',
