@@ -1,150 +1,105 @@
-@import "vendor/spuit/clones/reset"
+// @import "vendor/spuit/clones/reset"
 @import "vendor/spuit/all"
 
-@import "styles/config/settings"
+@import "styles/config/variables"
 @import "styles/config/mixins"
-@import "styles/config/base"
 
-@import "styles/modules/topbar"
-@import "styles/modules/sidebar"
-@import "styles/modules/footer"
-@import "styles/modules/tip"
-@import "styles/modules/notice"
+@import "styles/components/topbar"
+@import "styles/components/sidebar"
+
+//import styles
+
++import-opensans
++import-fa
+
++util-visibility
++util-margin
++util-clear
++util-anim
++util-flexboxgrid
++util-messages
+
++selection(#111, #fdfdc1)
+
+//basic styles
+
+body
+  +text-size-adjust
+  +font
+  margin: 0
+  padding: 0
 
 a
-  +link
+  +font
 
-.container
-  max-width: 960px
+img
+  +reset-img
 
-.meta
-  +meta
+ul.reset
+  +reset-ul
+  li
+    margin-bottom: 10px
 
-.button
-  +button
+//components styles
 
-.sample-body
+.button-flat
+  +button-flat
+.button-semiflat
+  +button-semiflat
+.button-border
+  +button-border
+.button-emboss
+  +button-emboss
+
+.link-normal
+  +link-normal
+.link-alt
+  +link-alt
+.link-opacity
+  +link-opacity
+.link-border
+  +link-border
+.link-alt
+  +link-alt
+
+.ul-border
+  +ul-border
+.ul-border-inside
+  +ul-border($border, true, true)
+.ul-icon
+  +ul-icon
+
+.dl-border
+  +dl-border
+.dl-list
+  +dl-list
+
+.table-frame
+  +table-frame
+.table-line
+  +table-line
+.table-stripe
+  +table-stripe
+
+.icon-fa
+  +icon-fa
+.icon-triangle
+  +icon-triangle
+.icon-triangle-pulldown
+  +icon-triangle(after, bottom)
+.icon-loading
+  +icon-loading
+
+.split
+  +split(3)
+
+.shoulder
+  +shoulder
+
+//style kits
+
+.body
   +body
 
-.sample-link
-  > a
-    margin-right: 10px
-  .link-img-icon
-    +a-img-icon("../images/icon-ai")
-  .link-border
-    +a-border($color-accent, 0, 1px)
-  .link-color
-    +a-color($color-accent)
-  .link-underline
-    +a-underline
-  .link-underline-alt
-    +a-underline(true)
-  .link-opacity
-    +a-opacity
-  .link-arrow
-    +a-arrow
-
-.sample-button
-  > ul
-    +ul-floats(10px)
-  .button-flat
-    +button-flat(14px, $color-accent, #fff, 10px 20px, 2px)
-  .button-semiflat
-    +button-semiflat(14px, $color-accent)
-  .button-border
-    +button-border(14px, $color-accent, #fff)
-  .button-emboss
-    +button-emboss(14px, $color-accent, #fff, 10px 20px, 6px, 4px)
-  .button-icon
-    +fa-icon('\f113')
-    +button-flat
-  .button-icon-replace
-    +fa-replace('\f113', 40px, 1.2em)
-    +button-emboss(14px, $color-accent, #fff, 0, 6px, 40px)
-
-.sample-icons
-  > ul
-    +ul-floats(10px)
-  .icon
-    $icon-images: (icon-ai: 0px, icon-fl: 10px, icon-fw: 0px, icon-id: 0px, icon-ps: 0px)
-    +icon-images-maps(50px, $icon-images, '/images/')
-  // .icon-img
-  //   +icon-image("../images/icon-ai", 30px, 30px)
-
-.sample-form
-  > ul
-    +ul-floats(10px)
-  .form-input
-    +input
-  .form-select
-    +select
-  .form-textarea
-    +input
-
-.pulldown
-  +pulldown
-  &__content
-    a
-      +font-en(12px)
-      text-transform: uppercase
-      color: #000
-      &:hover
-        color: $color-accent
-
-.sample-table
-  .table--frame
-    +table-frame
-  .table--line
-    +table-line
-  .table--stripe
-    +table-stripe
-
-.sample-chat
-  .chat
-    +chat
-
-.sample-split
-  .split5
-    +split(5, 1, true)
-  .split4
-    +split(4, 1, true)
-  .split3
-    +split(3, 1, true)
-
-.sample-grids
-  .grids
-    +grids
-
-.sample-h
-  .h-border-horizon
-    +h-border-horizon
-    margin-bottom: 20px
-  .h-border-horizon-right
-    +h-border-horizon-right
-    margin-bottom: 20px
-  .h-shoulder
-    +h-shoulder
-
-.sample-figure
-  .sample-rect
-    +rect(100px, 100px)
-    background: $color-accent
-  .sample-circle
-    +circle(100px)
-    background: $color-accent
-
-//rails 404
-
-.dialog
-  +vertical-align
-  text-align: center
-  h1
-    +font(18px)
-    margin-bottom: 10px
-  p
-    +font(12px)
-    margin-top: 5px
-  .dialog-btn
-    +button-border(14px, #000, 8px 20px 6px 20px, 2px, 0px)
-    margin-top: 40px
-    width: 200px
+.form
+  +form

@@ -1,0 +1,42 @@
+.topbar
+
+  &
+    +clearfix
+    z-index: 999
+    background: #fff
+    border-bottom: 1px solid #eee
+
+  .title
+    +font(20px)
+    float: left
+    padding: 10px 20px
+    span
+      +font(10px)
+    +breakpoint-down($media-md)
+      float: none
+      +font(12px)
+
+  .trigger
+    a
+      +replace-fa('\f0c9', 1em, 38px)
+      position: absolute
+      top: 0
+      right: 0
+
+  .nav
+    +border-box
+    float: right
+    padding: 15px 20px 0
+    ul
+      +reset-ul
+      +ul-floats(20px, false)
+    a
+      +font(12px)
+      color: $color-black
+    +breakpoint-down($media-md)
+      float: none
+      padding: 0 20px
+      clear: both
+      width: 100%
+      ul
+        +ul-border($border, true)

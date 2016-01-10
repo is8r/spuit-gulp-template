@@ -12,10 +12,16 @@ var sourcemaps = require('gulp-sourcemaps');
 var minifycss = require('gulp-minify-css');
 var fileinclude = require('gulp-file-include');
 var postcss = require('gulp-postcss');
+var filter = require("gulp-filter");
+var notify = require('gulp-notify');
 
 var paths = {
   copyElements: [
     'assets/views/**/*.html'
+    ],
+  railsWatch: [
+    '../app/views/**/*.haml',
+    'assets/stylesheets/**/*.sass'
     ],
   scripts: [
     'assets/javascripts/vender/**/*.js',
@@ -57,21 +63,25 @@ gulp.task('scripts', function() {
     .pipe(concat('scripts.min.js'))
     .pipe(uglify())
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('public/javascripts'))
+    .pipe(gulp.dest('../public/javascripts'))
     .pipe(reload({stream:true}));
 });
+
 gulp.task('styles', function() {
   var processors = [
-    require('autoprefixer')({ browsers: ['last 2 version', 'ie 8'], cascade: false })
+    require('autoprefixer')({ browsers: ['last 3 version', 'ie 8'], cascade: false })
   ];
 
   gulp.src(paths.styles)
     .pipe(plumber())
-    .pipe(sass({sourcemapPath: '.'}))
-    //.on('error', function (e) { console.log(e.message); })
-    //.pipe(minifycss())
+    .pipe(sass())
+    .on('error', function(err) {
+      console.log(err.message);
+    })
+    .pipe(minifycss())
+    .pipe(filter("**/*.css"))
     .pipe(postcss(processors))
-    .pipe(gulp.dest('public/stylesheets'))
+    .pipe(gulp.dest('../public/stylesheets'))
     .pipe(reload({stream:true}));
 });
 gulp.task('html', function() {
@@ -82,12 +92,29 @@ gulp.task('html', function() {
     .pipe(reload({stream:true}));
 });
 
-gulp.task('watch', function() {
+gulp.task('watch_reload', function() {
   gulp.run('connect');
   gulp.run('browserSync');
 
   gulp.watch([paths.copyElements], ['html']);
   gulp.watch([paths.spuitjs], ['spuitjs']);
+  gulp.watch([paths.scripts], ['scripts']);
+  gulp.watch([paths.styles], ['styles']);
+});
+
+gulp.task('watch_rails', function() {
+  var bs = require('browser-sync');
+  bs.init({
+    proxy: 'localhost:3000'
+  });
+
+  gulp.watch([paths.scripts], ['scripts']);
+  gulp.watch([paths.styles], ['styles']);
+
+  gulp.watch([paths.railsWatch]).on('change', bs.reload);
+});
+
+gulp.task('watch_normal', function() {
   gulp.watch([paths.scripts], ['scripts']);
   gulp.watch([paths.styles], ['styles']);
 });

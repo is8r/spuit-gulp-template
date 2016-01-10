@@ -2,8 +2,8 @@
 
 var gulp = require('gulp');
 
-require('require-dir')('./tasks');
+require('require-dir')('./tasks/');
 
 gulp.task('default', function () {
-  gulp.start('watch');
+  gulp.start('watch_rails');
 });

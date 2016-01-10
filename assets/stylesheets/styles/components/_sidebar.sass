@@ -1,19 +1,16 @@
 .sidebar
-  .js-elevator.is-fixed
-    width: 200px
 
-  &__title
-    +font(12px)
-    color: #000
-    margin-bottom: 10px
-  &__lists
+  > ul
     width: 100%
+    margin: 0
+    padding: 0
+
     > li
       border-top: 1px solid #eee
       &:first-child
         border-top: none
+
       > a
-        +font(14px)
         +border-box
         +nowrap
         display: block
@@ -21,7 +18,7 @@
         text-decoration: none
         color: #000
         &:hover
-          color: $color-accent
+          color: $color-key
         &.is-current
-          border-left: 2px solid $color-accent
+          border-left: 2px solid $color-key
           padding-left: 10px
